@@ -43,7 +43,7 @@ const onSignIn = function (event) {
 //  };
 
 const addHandlers = () => {
-  $('#sign-up').on('click', onSignUp);
+  $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   // $('#change-password').on('submit', onChangePassword);
   // $('#sign-out').on('submit', onSignOut);

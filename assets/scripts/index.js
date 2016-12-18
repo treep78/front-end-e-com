@@ -1,6 +1,6 @@
 'use strict';
 
-const authEvents = require('../events..js');
+const authEvents = require('../scripts/auth/events.js');
 
 $(()=>{
   authEvents.addHandlers();
