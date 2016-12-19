@@ -9,9 +9,9 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const onGetOneProduct = function(event){
   event.preventDefault();
-  let data = getFormFields(event.target);
-  console.log('You have a product.');
-  api.getOneProduct()
+  let productId = event.target.getAttribute('data-id');
+  console.log('this is the productId', productId);
+  api.getOneProduct(productId)
     .then(ui.getOneProductSuccess)
     .catch(ui.getOneProductFailure);
 };
@@ -21,9 +21,11 @@ const onGetAllProducts = function(data){
   console.log('You have ALL products.');
   api.getAllProducts(data)
     .then(ui.getAllProductsSuccess)
+    .then(function(){
+      $('.prod-desc').on('click', onGetOneProduct);
+    })
     .catch(ui.getAllProductsFailure);
 };
-
 
 const onAddItem = function(){
 
@@ -54,7 +56,6 @@ const addCartHandlers = function() {
   $('#get-cart').on('click', onGetItems);
   $('#get-order-history').on('click', onGetOrderHx);
   $('#get-all-products').on('click', onGetOrderHx);
-  $('#get-one-product').on('click', onGetOneProduct);
 };
 
 module.exports = {

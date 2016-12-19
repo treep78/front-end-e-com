@@ -3,10 +3,10 @@
 const config = require('../config.js');
 // const store = require('../store.js');
 
-const getOneProduct = (id) =>
+const getOneProduct = (productId) =>
     $.ajax ({
-    url: config.host + '/products/' + id,
-    method: 'GET',
+    url: config.host + '/products/' + productId,
+    method: 'GET'
   });
 
 
