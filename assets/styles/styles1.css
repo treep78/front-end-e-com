@@ -20,6 +20,7 @@ nav {
   bottom: 0
   }
 
+
   .button-wrapper {
     margin: 0 auto;
     width: 60%;
@@ -36,6 +37,7 @@ nav {
   border: 1px solid black;
   display: inline-block;
 }
+
 
 /* product-thumb.handlebars */
 
@@ -232,5 +234,31 @@ nav {
   border-bottom: 1px solid grey;
   text-align: center;
   margin-top: 10px;
+}
+
+.product-module{
+  height: 50px;
+  width: 50px;
+  background-color: grey;
+}
+
+
+/*   product.handlebars  */
+
+.product-handlebars {
+
+}
+
+.product-description {
+  width: 40%;
+  float: left;
+
+}
+
+.product-image{
+  display: block;
+  height: 300px;
+  width: 250px;
+  background-size: cover;
 }
 
