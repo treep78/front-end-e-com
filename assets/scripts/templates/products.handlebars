@@ -1,10 +1,11 @@
-<div class="product-module prod-desc" data-id={{products._id}}>
-  <hr>
-  ${{product.price}}<br>
-  <hr>
-  {{product.description}} <br>
-  <hr>
-  <img class="product-thumb" src={{product.image}} alt="http://imgur.com/qkPReeD">
-  <p class="product-name">{{product.name}}</p>
-  <button type="button">Add to Cart</button>
-</div>
+{{#each}}
+  <div class=product-content-wrapper>
+    <div class="product-text-wrapper">
+    <p class="product-title"></p>
+    <p class="product-description"></p>
+    <p class="product-price-wrapper">Price: $<span class="product-price"></span></p>
+  </div>
+    <img class="product-image" src="" title="source: imgur.com"/>
+  </div>
+    <button class="add-cart-button" type="button">Add to Cart</button>
+{{/each}}

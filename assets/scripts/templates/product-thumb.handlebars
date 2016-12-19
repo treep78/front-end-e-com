@@ -1,13 +1,6 @@
-{{#each products as |product|}}
-<div class="product-module prod-desc" data-id={{product._id}}>
-  <hr>
-  {{product.name}} <br>
-  <hr>
-  ${{product.price}} <br>
-  <hr>
-  {{product.description}} <br>
-  <hr>
-  <img class="product-thumb" src={{product.image}} alt="http://imgur.com/qkPReeD">
+{{#each}}
+<div class="product-module">
+  <img class="product-thumb" src="" alt="http://imgur.com/qkPReeD">
   <p class="product-name"></p>
 </div>
 {{/each}}
