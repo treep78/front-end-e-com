@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cookies</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div class="title-bar"></div>
+  <nav>
+    <div class="button-wrapper">
+      <button class="nav-button" type="submit">Cart</button>
+      <button class="nav-button" type="submit" data-toggle="modal" data-target="#authModal">Login</button>
+      <button class="nav-button" type="submit">Purchases</button>
+    </div>
+  </nav>
+
+
+
+  <div class="content-container">
+    <h1>Example</h1>
+
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <a href="#" data-toggle="modal" data-target="#productModal">
+      <div class="product-module">
+
+
+      </div>
+    </a>
+
+  </div> <!--content-container CLOSED -->
+
+
+
+  <!-- LOGIN Modal STARTS here -->
+  <div id="authModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login to Start Shopping</h4>
+      </div>
+      <div class="modal-body">
+        <div >User Facing Login Message</div>
+        <div class="row">
+
+          <div class="col-xs-6">
+            <!-- **  SIGN UP  ** STARTS here -->
+            <div class="well im-signed-out">
+              <form id="sign-up">
+                <div class="form-group">
+                  <label for="username" class="control-label">Username</label>
+                  <input type="text" class="form-control"  name="credentials[email]" title="Please enter you username" placeholder="example@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">Password</label>
+                  <input type="password" class="form-control"  name="credentials[password]" title="Please enter your password">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">Confirm Password</label>
+                  <input type="password" class="form-control"  name="credentials[password_confirmation]" title="Please enter your password">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+              </form>
+            </div>
+          </div>
+          <!-- ** SIGN UP ** ENDS here -->
+
+          <div class="col-xs-6">
+            <!-- **  SIGN IN  ** STARTS here -->
+            <div class="well im-signed-out">
+              <form id="sign-in">
+                <div class="form-group">
+                  <label for="username" class="control-label">Username</label>
+                  <input type="text" class="form-control"  name="username" title="Please enter you username" placeholder="example@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">Password</label>
+                  <input type="password" class="form-control"  name="password" title="Please enter your password">
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-success btn-block">Sign In</button>
+              </form>
+            </div>
+          </div>
+          <!-- ** SIGN IN ** ENDS here -->
+        </div>
+        <!-- END of FIRST row -->
+
+        <div class="row" "hidden-till-sign-in">
+          <!-- START of SECOND row -->
+          <div class="col-xs-6">
+            <!-- **  CHANGE PASSWORD ** STARTS here -->
+            <div class="well im-signed-in">
+              <form id="change-password" >
+                <div class="form-group">
+                  <label for="password" class="control-label">Old Password</label>
+                  <input type="password" class="form-control"  name="password" title="Please enter your password">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">New Password</label>
+                  <input type="password" class="form-control"  name="password" title="Please enter your password">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Change Password</button>
+              </form>
+            </div>
+          </div>
+          <!-- ** CHANGE PASSWORD ** ENDS here -->
+          <div class="col-xs-6">
+            <!-- **  SIGN OUT  ** STARTS here -->
+            <div class="well im-signed-in">
+              <form id="sign-out">
+                <div class="form-group">
+                  <label for="username" class="control-label">Sign Out</label>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Sign Out</button>
+              </form>
+            </div>
+          </div>
+          <!-- **  SIGN OUT  ** STARTS here -->
+        </div>
+        <!-- END of SECOND row -->
+      </div>
+    </div>
+    <!-- LOGIN Modal ENDS here -->
+  </div><!-- /.modal -->
+
+  <!-- PRODUCT Modal STARTS here -->
+  <div id="productModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content product-handlebars">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <p class="product-description">Bacon ipsum dolor amet t-bone pastrami sausage filet mignon chicken.
+            Cupim turducken pancetta venison jerky Alcatra swine ham hock, salami
+            drumstick chicken jowl. Kielbasa pork belly pork loin picanha pastrami.
+          </p>
+          <img class="product-image" src="http://i.imgur.com/nrGTQt4.jpg" title="source: imgur.com"/>
+
+          <button class="add-cart" type="button">Add to Cart</button>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div>  <!-- /.modal-dialog -->
+  </div><!-- PRODUCT Modal ENDS here -->
+
+</body>
+
+
+
+</html>
