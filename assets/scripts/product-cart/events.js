@@ -1,11 +1,20 @@
 'use strict';
 const api = require('./api');
 const ui = require('./ui');
-const getFormFields = require('../../../lib/get-form-fields');
+// const getFormFields = require('../../../lib/get-form-fields');
 
 // const onGetAllProducts = function(){
 //
 // };
+
+const onAddItem = function(data, event){
+  event.preventDefault();
+  console.log('ADD ME!', data);
+  // api.addItem(data)
+  //   .then(ui.addItemSuccess)
+  //   .catch(ui.addItemFailure);
+};
+
 
 const onGetOneProduct = function(event){
   event.preventDefault();
@@ -13,6 +22,9 @@ const onGetOneProduct = function(event){
   console.log('this is the productId', productId);
   api.getOneProduct(productId)
     .then(ui.getOneProductSuccess)
+    .then(function(data){
+      $('.cart-add').on('click', onAddItem(data));
+    })
     .catch(ui.getOneProductFailure);
 };
 
@@ -27,9 +39,6 @@ const onGetAllProducts = function(data){
     .catch(ui.getAllProductsFailure);
 };
 
-const onAddItem = function(){
-
-};
 
 const onDeleteItem = function(){
 
@@ -50,7 +59,7 @@ const onGetOrderHx   = function(){
 
 
 const addCartHandlers = function() {
-  $('#add-item-to-cart').on('click', onAddItem);
+  // $('.cart-add').on('click', onAddItem);
   $('#delete-item-from-cart').on('click', onDeleteItem);
   $('#update-item-in-cart').on('click', onUpdateItem);
   $('#get-cart').on('click', onGetItems);

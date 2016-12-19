@@ -16,9 +16,9 @@ const getAllProductsFailure = function() {
 };
 
 const getOneProductSuccess = function(data) {
-  console.log(data);
+  console.log('Yay data', data);
    $('#one-product').html(showOneProductTemplate(data));
-
+   return data;
 };
 
 const getOneProductFailure = function() {

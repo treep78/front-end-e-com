@@ -1,10 +1,15 @@
 <div class="product-module prod-desc" data-id={{products._id}}>
-  <hr>
+  <!-- <hr>
   ${{product.price}}<br>
   <hr>
   {{product.description}} <br>
   <hr>
   <img class="product-thumb" src={{product.image}} alt="http://imgur.com/qkPReeD">
-  <p class="product-name">{{product.name}}</p>
-  <button type="button">Add to Cart</button>
+  <p class="product-name">{{product.name}}</p> -->
+  <form class="product-to-cart">
+    <div class="form-group">
+      <input type="hidden" name="item[product_id]" value={{products._id}}>
+    </div>
+    <button class="cart-add" type="submit">Add to Cart</button>
+  </form>
 </div>
