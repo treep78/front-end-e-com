@@ -14,7 +14,10 @@ const signUpFailure = function() {
 };
 
 const signInSuccess = function(data) {
+  console.log(data.user);
   store.user = data.user;
+  store.user.id = data.user._id;
+  console.log(store.user);
 $('#sign-in').trigger('reset');
 $('#sign-up-in-modal-messages').html('You\'ve successfully signed in!');
 $('#auth-modal').hide(1000);
@@ -27,26 +30,26 @@ const signInFailure = function() {
 $('#sign-up-in-modal-messages').html('Oops, something went wrong, trying signing in again.');
 };
 
-// const changePasswordSuccess = function() {
-// $('#change-password').trigger('reset');
-// $('#change-password-modal-messages').html('You\'ve successfully changed your password.');
-// };
-//
-// const changePasswordFailure = function() {
-// $('#change-password-modal-messages').html('Oops, something went wrong, trying changing your password again.');
-// };
-//
-// const signOutSuccess = function() {
-//   // replace message div content with ('')?
-//   $('#sign-out-modal-messages').html('You\'ve successfully signed out.');
-//   // show sign in and sign up buttons
-//   $('.im-sign-in').hide();
-//   $('.im-sign-out').show();
-// };
-//
-// const failure = function() {
-// $('#sign-out-modal-messages').html('Oops, something went wrong.');
-// };
+const changePasswordSuccess = function() {
+$('#change-password').trigger('reset');
+$('#change-password-modal-messages').html('You\'ve successfully changed your password.');
+};
+
+const changePasswordFailure = function() {
+$('#change-password-modal-messages').html('Oops, something went wrong, trying changing your password again.');
+};
+
+const signOutSuccess = function() {
+  // replace message div content with ('')?
+  $('#sign-out-modal-messages').html('You\'ve successfully signed out.');
+  // show sign in and sign up buttons
+  $('.im-sign-in').hide();
+  $('.im-sign-out').show();
+};
+
+const failure = function() {
+$('#sign-out-modal-messages').html('Oops, something went wrong.');
+};
 
 
 module.exports = {
@@ -54,8 +57,8 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   signInFailure,
-  // changePasswordSuccess,
-  // changePasswordFailure,
-  // signOutSuccess,
-  // failure,
+  changePasswordSuccess,
+  changePasswordFailure,
+  signOutSuccess,
+  failure,
 };
