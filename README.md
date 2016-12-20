@@ -42,10 +42,10 @@ By Day Two the back end was completed, as well as a working authentication proce
 and we focused our efforts on the CRUD actions as a team
 (essentially 'pair coding').
 
-Front End Repo:
-Back End Repo:
+Front End Repo: https://github.com/Mod-Squad/front-end-e-com/blob/master/README.md
+Back End Repo: https://github.com/Mod-Squad/e-com-back-end
 Front End Demo Site:
-Back End Demo Site:
+Back End Demo Site: https://gentle-hamlet-35507.herokuapp.com
 
 ## User Stories
 - A User will have the ability to add a product to a cart
