@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cookies</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div class="title-bar"></div>
+  <nav>
+    <div class="button-wrapper">
+      <button class="nav-button" type="submit" data-toggle="modal" data-target="#cartModal">Cart</button>
+      <button class="nav-button" type="submit" data-toggle="modal" data-target="#authModal">Login</button>
+      <button class="nav-button" type="submit" data-toggle="modal" data-target="#orderHistoryModal">Purchases</button>
+    </div>
+  </nav>
+  <div class="content-container">
+    <h1>Example</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <a href="#" data-toggle="modal" data-target="#productModal" class="product-thumb-handlebars">
+        <!-- product-thumbs.handlebars template STARTS here -->
+      <div class="product-module">
+        <img class="product-thumb" src="http://imgur.com/qkPReeD" alt="http://imgur.com/qkPReeD">
+        <p class="product-description">BLAH BLAH BLAH BLAH</p>
+      </div>
+      <!-- product-thumbs.handlebars template ENDS here -->
+    </a>
+
+  </div> <!--content-container CLOSED -->
+
+
+
+  <!-- LOGIN Modal STARTS here -->
+  <div id="authModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Login to Start Shopping</h4>
+      </div>
+      <div class="modal-body">
+        <div >User Facing Login Message</div>
+        <div class="row">
+
+          <div class="col-xs-6">
+            <!-- **  SIGN UP  ** STARTS here -->
+            <div class="well">
+              <form id=sign-up>
+                <div class="form-group">
+                  <label for="username" class="control-label">Username</label>
+                  <input type="text" class="form-control"  name="username" title="Please enter you username" placeholder="example@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">Password</label>
+                  <input type="password" class="form-control"  name="password" title="Please enter your password">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">Confirm Password</label>
+                  <input type="password" class="form-control"  name="password" title="Please enter your password">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+              </form>
+            </div>
+          </div>
+          <!-- ** SIGN UP ** ENDS here -->
+
+          <div class="col-xs-6">
+            <!-- **  SIGN IN  ** STARTS here -->
+            <div class="well">
+              <form id=sign-in>
+                <div class="form-group">
+                  <label for="username" class="control-label">Username</label>
+                  <input type="text" class="form-control"  name="username" title="Please enter you username" placeholder="example@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">Password</label>
+                  <input type="password" class="form-control"  name="password" title="Please enter your password">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Sign In</button>
+              </form>
+            </div>
+          </div>
+          <!-- ** SIGN IN ** ENDS here -->
+        </div>
+        <!-- END of FIRST row -->
+
+        <div class="row" "hidden-till-sign-in">
+          <!-- START of SECOND row -->
+          <div class="col-xs-6">
+            <!-- **  CHANGE PASSWORD ** STARTS here -->
+            <div class="well">
+              <form id=sign-up>
+                <div class="form-group">
+                  <label for="password" class="control-label">Old Password</label>
+                  <input type="password" class="form-control"  name="password" title="Please enter your password">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">New Password</label>
+                  <input type="password" class="form-control"  name="password" title="Please enter your password">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+              </form>
+            </div>
+          </div>
+          <!-- ** CHANGE PASSWORD ** ENDS here -->
+          <div class="col-xs-6">
+            <!-- **  SIGN OUT  ** STARTS here -->
+            <div class="well">
+              <form >
+                <div class="form-group">
+                  <label for="username" class="control-label">Sign Out</label>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Sign Out</button>
+              </form>
+            </div>
+          </div>
+          <!-- **  SIGN OUT  ** STARTS here -->
+        </div>
+        <!-- END of SECOND row -->
+      </div>
+    </div>
+    <!-- LOGIN Modal ENDS here -->
+  </div><!-- /.modal -->
+  <!-- LOGIN Modal ENDS here -->
+
+
+  <!-- PRODUCT Modal STARTS here -->
+  <div id="productModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <!-- product.handlebars template STARTS here -->
+          <div class=product-content-wrapper>
+            <div class="product-text-wrapper">
+            <p class="product-title">mc watchface 300</p>
+            <p class="product-description">Bacon ipsum dolor amet t-bone pastrami
+              sausage filet mignon chicken.Cupim turducken pancetta venison
+              jerky Alcatra swine ham hock, salami drumstick chicken jowl. Kielbasa pork belly pork loin picanha pastrami.
+            </p>
+            <p class="product-price-wrapper">Price: $<span class="product-price">100</span></p>
+          </div>
+            <img class="product-image" src="http://i.imgur.com/nrGTQt4.jpg" title="source: imgur.com"/>
+          </div>
+            <button class="add-cart-button" type="button">Add to Cart</button>
+            <!-- product.handlebars template ENDS here -->
+          </div>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div>  <!-- /.modal-dialog -->
+  </div><!-- PRODUCT Modal ENDS here -->
+  <!-- PRODUCT Modal ENDS here -->
+
+
+  <!-- CART Modal STARTS here -->
+  <div id="cartModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Cart</h4>
+      </div>
+      <div class="modal-body">
+        <div class="cart-item-wrapper">
+          <p class="cart-item-header col-xs-3">Name:  </p>
+          <p class="cart-item-header col-xs-3">Description:  </p>
+          <p class="cart-item-header col-xs-3">Quantity:  </p>
+          <p class="cart-item-header col-xs-3">Amount:  </p>
+        </div>
+        <div class="cart-handlebars">
+          <!-- cart.handlebars.js STARTS here -->
+          <div class="cart-order-summary">
+            <button type="button" class="delete-cart-item" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p class="cart-item-name col-xs-3">McWatchFace</p>
+            <p class="cart-item-description col-xs-3">Blah Blah blah</p>
+            <input class="cart-item-quant col-xs-2" type="number" value="1"></input>
+            <p class="cart-item-price col-xs-3">$100</p>
+        </div>
+        <!-- cart.handlebars.js ENDS here -->
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button class="checkout-button" type="submit">Checkout</button>
+        <p class="cart-total">Total: $  </p>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- CART Modal ENDS here -->
+
+
+<!-- ORDER HISTROY Modal STARTS here -->
+<div id="orderHistoryModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Purchase History</h4>
+      </div>
+      <div class="modal-body">
+        <div class="order-history-header-wrapper">
+          <p class="order-history-header col-xs-3">Product: </p>
+          <p class="order-history-header col-xs-3">Quantity: </p>
+          <p class="order-history-header col-xs-3">Price: </p>
+          <p class="order-history-header col-xs-3">Date: </p>
+        </div>
+        <div class="order-history-handlebars">
+          <!-- order-history.handlebars.js STARTS here -->
+        <div class="order-history-wrapper">
+          <p class="order-history-product col-xs-3">McWatchFace </p>
+          <p class="order-history-quan col-xs-3">2 </p>
+          <p class="order-history-price col-xs-3">$100 </p>
+          <p class="order-history-date col-xs-3">08-31-2017 </p>
+        </div>
+        <!-- order-history.handlebars.js STARTS here -->
+      </div>
+      <div class="modal-footer"></div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- ORDER HISTROY Modal ENDS here -->
+
+
+</body>
+
+
+
+</html>
