@@ -43,7 +43,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Login to Start Shopping</h4>
+        <h4 class="modal-title">Login to Start Shopping</h4>
       </div>
       <div class="modal-body">
         <div >User Facing Login Message</div>
@@ -52,7 +52,7 @@
           <div class="col-xs-6">
             <!-- **  SIGN UP  ** STARTS here -->
             <div class="well">
-              <form >
+              <form id=sign-up>
                 <div class="form-group">
                   <label for="username" class="control-label">Username</label>
                   <input type="text" class="form-control"  name="username" title="Please enter you username" placeholder="example@gmail.com">
@@ -74,7 +74,7 @@
           <div class="col-xs-6">
             <!-- **  SIGN IN  ** STARTS here -->
             <div class="well">
-              <form id="loginForm" >
+              <form id=sign-in>
                 <div class="form-group">
                   <label for="username" class="control-label">Username</label>
                   <input type="text" class="form-control"  name="username" title="Please enter you username" placeholder="example@gmail.com">
@@ -83,10 +83,6 @@
                   <label for="password" class="control-label">Password</label>
                   <input type="password" class="form-control"  name="password" title="Please enter your password">
                 </div>
-                <br>
-                <br>
-                <br>
-                <br>
                 <button type="submit" class="btn btn-success btn-block">Sign In</button>
               </form>
             </div>
@@ -100,7 +96,7 @@
           <div class="col-xs-6">
             <!-- **  CHANGE PASSWORD ** STARTS here -->
             <div class="well">
-              <form id="loginForm" >
+              <form id=sign-up>
                 <div class="form-group">
                   <label for="password" class="control-label">Old Password</label>
                   <input type="password" class="form-control"  name="password" title="Please enter your password">
@@ -109,7 +105,7 @@
                   <label for="password" class="control-label">New Password</label>
                   <input type="password" class="form-control"  name="password" title="Please enter your password">
                 </div>
-                <button type="submit" class="btn btn-success btn-block">Change Password</button>
+                <button type="submit" class="btn btn-success btn-block">Sign Up</button>
               </form>
             </div>
           </div>
@@ -177,7 +173,7 @@
 
 
   <!-- CART Modal STARTS here -->
-  <div id="cartModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">>
+  <div id="cartModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">

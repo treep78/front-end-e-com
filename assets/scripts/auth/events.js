@@ -20,8 +20,8 @@ const onSignUp = function (event) {
 };
 
 const onSignIn = function (event) {
+  let data = getFormFields(this);
   event.preventDefault();
-  let data = getFormFields(event.target);
   //console.log('i\'m signed in', data);
   api.signIn(data)
     .then(ui.signInSuccess)

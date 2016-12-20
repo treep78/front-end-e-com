@@ -18,12 +18,12 @@ const signInSuccess = function(data) {
   store.user = data.user;
   store.user.id = data.user._id;
   console.log(store.user);
-$('#sign-in').trigger('reset');
+// $('#sign-in').trigger('reset');
 $('#sign-up-in-modal-messages').html('You\'ve successfully signed in!');
-$('#auth-modal').hide(1000);
+// $('#auth-modal').hide(1000);
 // show sign out button, change password buttons, view cart buttons
-$('.im-sign-in').show();
-$('.im-sign-out').hide();
+// $('.im-sign-in').show();
+// $('.im-sign-out').hide();
 };
 
 const signInFailure = function() {

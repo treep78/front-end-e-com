@@ -1,8 +1,8 @@
 'use strict';
 const store = require('../store.js');
-const showAllProductsTemplate = require('../templates/product-thumb.handlebars');
+const showAllProductsTemplate = require('../templates/product-thumb-ariel.handlebars');
 
-const showOneProductTemplate = require('../templates/products.handlebars');
+const showOneProductTemplate = require('../templates/products-rick.handlebars');
 
 const getAllProductsSuccess = function(data) {
   store.products = data.products;

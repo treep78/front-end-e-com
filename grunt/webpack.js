@@ -8,7 +8,7 @@ module.exports = {
     entry: {
       bundle: './index.js',
       specs: './spec/_all.js',
-      vendor: ['jquery', 'bootstrap-sass'],
+      vendor: ['jquery', 'materialize-css', 'jquery-match-height'],
     },
 
     output: {
@@ -16,8 +16,17 @@ module.exports = {
       filename: '[name].js',
     },
 
+    // the npm materialize-css package comes with it's own private copy of jquery
+    // which causes problems, so this is to make sure 'our' jquery is used
+    resolve: {
+      alias: {
+        'jquery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery.js') // The ../node_modules seems hacky JAF
+      }
+    },
+	// ^ Put the above lines to resolve jquery to the one you've installed
+
     plugins: [
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+      new webpack.optimize.CommonsChunkPlugin('vendor', 'dependencies.js'),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
