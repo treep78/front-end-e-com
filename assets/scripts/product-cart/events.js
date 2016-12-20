@@ -8,10 +8,36 @@ const getFormFields = require('../../../lib/get-form-fields');
 //
 // };
 
+
+
+const onUpdateItem = function(event){
+  event.preventDefault();
+  let itemId = event.target.getAttribute('data-id');
+  // let data = getFormFields(this);
+  let data = {item: {count: 4}};
+  console.log('I\'m UPDATED itemId and countData', itemId, data);
+  debugger;
+  api.updateItem(itemId, data)
+  .then(ui.updateItemSuccess)
+  .catch(ui.updateItemFailure);
+};
+
+const onDeleteItem = function(){
+  let id = event.target.getAttribute('data-id');
+  console.log('DELETED', id);
+  api.deleteItem(id)
+    .then(ui.deleteItemSuccess)
+    .catch(ui.deleteItemFailure);
+};
+
 const onGetItems  = function(){
   console.log('All the items of the cart!');
   api.getItems()
     .then(ui.getItemsSuccess)
+    .then(function(){
+      $('.update-form').on('submit', onUpdateItem);
+      $('.delete-cart-item').on('click', onDeleteItem);
+    })
     .catch(ui.getItemsFailure);
 };
 
@@ -24,6 +50,8 @@ const onAddItem = function(event){
     .then(ui.addItemSuccess)
     .then(function(data){
       onGetItems(data);
+      // $('.update-cart-item').on('submit', onUpdateItem);
+      // $('.delete-cart-item').on('click', onDeleteItem);
     })
     .catch(ui.addItemFailure);
 };
@@ -54,13 +82,9 @@ const onGetAllProducts = function(data){
 };
 
 
-const onDeleteItem = function(){
 
-};
 
-const onUpdateItem = function(){
 
-};
 
 
 
@@ -70,11 +94,8 @@ const onGetOrderHx   = function(){
 
 
 const addCartHandlers = function() {
-
-  $('#show-me-the-cart').on('click', onGetItems);
-  $('#delete-item-from-cart').on('click', onDeleteItem);
-  $('#update-item-in-cart').on('click', onUpdateItem);
-  // $('#get-cart').on('click', onGetItems);
+  // $('#delete-item-from-cart').on('click', onDeleteItem);
+  // $('#update-item-in-cart').on('click', onUpdateItem);
   $('#get-order-history').on('click', onGetOrderHx);
   $('#get-all-products').on('click', onGetOrderHx);
 };

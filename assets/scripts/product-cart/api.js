@@ -35,6 +35,25 @@ const addItem = (data) =>
       }
     });
 
+  const deleteItem = (id) =>
+    // console.log(store.user);
+      $.ajax ({
+      url: config.host + '/items/' + id,
+      method: 'DELETE',
+      headers: {
+      Authorization: 'Token token=' + store.user.token,
+      }
+    });
+
+  const updateItem = (itemId, data) =>
+      $.ajax ({
+      url: config.host + '/items/' + itemId,
+      method: 'PATCH',
+      data,
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      }
+    });
 
 
   module.exports = {
@@ -42,4 +61,6 @@ const addItem = (data) =>
     getAllProducts,
     addItem,
     getItems,
+    deleteItem,
+    updateItem,
   };
