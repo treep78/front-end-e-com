@@ -3,8 +3,11 @@
 const config = require('../config.js');
 const api = require('./stripe-api');
 const ui = require('./stripe-ui');
-const cart = require('../cart/cart_storage');
+const productUi = require('../product-cart/ui.js');
+const store = require('../store.js');
 
+let total = store.totalCart;
+console.log(store.totalCart);
 let currentOrder = {
   "order": cart.cartObj
 };
@@ -17,8 +20,8 @@ let handler = StripeCheckout.configure({
   token: function(token) {
     let credentials = {
       stripeToken: token.id,
-      amount: 65.00 //for test
-      // amount: currentOrder.order.total * 100
+      // amount: 65.00 //for test
+      // amount: total * 100
     };
     api.addStripeCharge(credentials).then(ui.success).catch(ui.failure);
   }
@@ -27,6 +30,7 @@ let handler = StripeCheckout.configure({
 
 const onCheckout = (event) => {
   event.preventDefault();
+  let total = store.totalCart;
   // if (!app.user || currentOrder.order.total === 0) {
   //   return;
   // }
@@ -42,8 +46,11 @@ const onCheckout = (event) => {
     //   api.changePaidStatus().then(ui.changePaidStatusSuccess).catch(ui.failure);
     // },
     // amount: currentOrder.order.total * 100
-    amount: 65.00 //for test
+    // amount: 65.00 //for test
+    amount: total
+
   });
+  console.log(total);
 };
 
 const addHandlers = () => {
