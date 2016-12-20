@@ -4,19 +4,13 @@ const ui = require('./ui');
 // const store = require('../store.js');
 const getFormFields = require('../../../lib/get-form-fields');
 
-// const onGetAllProducts = function(){
-//
-// };
-
-
 
 const onUpdateItem = function(event){
   event.preventDefault();
   let itemId = event.target.getAttribute('data-id');
-  // let data = getFormFields(this);
-  let data = {item: {count: 4}};
+  let data = getFormFields(this);
+  // let data = {item: {count: 4}};
   console.log('I\'m UPDATED itemId and countData', itemId, data);
-  debugger;
   api.updateItem(itemId, data)
   .then(ui.updateItemSuccess)
   .catch(ui.updateItemFailure);
@@ -30,6 +24,47 @@ const onDeleteItem = function(){
     .catch(ui.deleteItemFailure);
 };
 
+const getPriceTotal = function(){
+  // return new Promise((resolve, reject) => {
+  //
+  //     success: (response) => {
+  //       resolve(response);
+  //     },
+  //     error: (error) => {
+  //       reject(error);
+
+  let itemList = [];
+  let total = 0;
+
+  api.getItems()
+  .then((items) => {
+    console.log('these are items: ', items);
+    for(let item in items.serialized) {
+      for(let i = 0; i<items.serialized[item].count; i++) {
+        itemList.push(items.serialized[item].product_id);
+      }
+    }
+  })
+  .then(api.getAllProducts)
+  .then((productList)=>{
+    // console.log('these are products and the itemList: ', productList, itemList);
+    for(let item in itemList){
+      for(let product in productList.products){
+        // console.log('this is one', productList.products, 'this is two', itemList[item]);
+        if(productList.products[product]._id === itemList[item])
+        {
+          // console.log('product price', productList.products[product].price);
+          total += productList.products[product].price;
+          break;
+        }
+      }
+    }
+    return total;
+  })
+  .then(ui.getPriceTotalSuccess)
+  .catch(console.error);
+};
+
 const onGetItems  = function(){
   console.log('All the items of the cart!');
   api.getItems()
@@ -38,6 +73,12 @@ const onGetItems  = function(){
       $('.update-form').on('submit', onUpdateItem);
       $('.delete-cart-item').on('click', onDeleteItem);
     })
+    .then(getPriceTotal)
+    // .then(function(data){
+    //   console.log(data);
+    //   ui.getPriceTotalSuccess(data);
+    // })
+    // .catch(ui.getPriceTotalFailure)
     .catch(ui.getItemsFailure);
 };
 
@@ -50,8 +91,6 @@ const onAddItem = function(event){
     .then(ui.addItemSuccess)
     .then(function(data){
       onGetItems(data);
-      // $('.update-cart-item').on('submit', onUpdateItem);
-      // $('.delete-cart-item').on('click', onDeleteItem);
     })
     .catch(ui.addItemFailure);
 };
@@ -81,21 +120,12 @@ const onGetAllProducts = function(data){
     .catch(ui.getAllProductsFailure);
 };
 
-
-
-
-
-
-
-
 const onGetOrderHx   = function(){
 
 };
 
 
 const addCartHandlers = function() {
-  // $('#delete-item-from-cart').on('click', onDeleteItem);
-  // $('#update-item-in-cart').on('click', onUpdateItem);
   $('#get-order-history').on('click', onGetOrderHx);
   $('#get-all-products').on('click', onGetOrderHx);
 };
