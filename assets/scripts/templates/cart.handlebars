@@ -1,0 +1,17 @@
+
+  {{#each items}}
+    <div class="row" id="{{items.product_id}}">
+      <div class="col-md-3 cart">
+        <p>{{product_id}}</p>
+      </div>
+      <div class="col-md-3 cart">
+        <p>${{price}}</p>
+      </div>
+      <div class="col-md-3 cart">
+        <input class="quant" type="number" value={{count}}>
+      </div>
+      <div class="col-md-3 cart">
+        <button class="x" size="small">x</button>
+      </div><br>
+    </div>
+  {{/each}}
