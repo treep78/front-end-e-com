@@ -13,7 +13,7 @@
 <body>
 
   <!--NAVBAR STARTS HERE -->
-  <!-- <nav class="navbar navbar-inverse">
+   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -30,6 +30,7 @@
               <li><button type="button" class="btn btn-primary btn-lg signed-out" data-toggle="modal" data-target="#signInModal">Sign In</button></li>
               <li><button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#changePasswordModal">Change Password</button></li>
               <li><button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#signOutModal">Sign Out</button></li>
+              <li id='cart-button' class="cart" data-toggle="modal" data-target="#cart"><a>Cart</a></li>
             </ul>
           </li>
         </ul>
@@ -44,7 +45,7 @@
     dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
   <!-- Sign-up Modal -->
-  <!-- <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signInLabel">
+   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signInLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -74,7 +75,7 @@
 
   <!-- Sign-in modal -->
 
-  <!-- <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInLabel">
+   <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -100,7 +101,7 @@
 
   <!-- Change password modal -->
 
-  <!-- <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel">
+   <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -126,7 +127,7 @@
 
   <!-- Sign-out modal -->
 
-  <!-- <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signOutLabel">
+  <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signOutLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -144,6 +145,95 @@
     </div>
   </div> -->
 
+
+  <div id='content' class="content">
+      <div id='products'>
+      </div>
+
+
+  <form id="get-orders">
+    <fieldset>
+      <legend>Get Order History</legend>
+      <input type="submit" name="submit" value="Get Order History">
+    </fieldset>
+  </form>
+
+
+  <h3> Order History </h3>
+  <h4 id="order-history"> </h4>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="cartLabel">Shopping Cart</h4>
+</div>
+<div class="modal-body">
+<div class="show-cart">
+  <div class="row cart-row">
+    <div class="col-md-3">
+      <h5>Item</h5>
+    </div>
+    <div class="col-md-3">
+      <h5>Price</h5>
+    </div>
+    <div class="col-md-3">
+      <h5>Quantity</h5>
+    </div>
+    <div class="col-md-3">
+      <h5>Delete</h5>
+    </div>
+    <br>
+  </div>
+
+
+  <div class="cart-items">
+  </div>
+
+  <h3 class="no-items">Your Cart is Empty!</h3>
+  <h5>Total: </h5>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <button style="display: none" type="button" class="btn btn-default create-order" id="save-order-button">Save for later</button>
+  <button style="display" type="button" class="btn btn-default checkout" id="checkout-button">Checkout</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="modal fade" id="item" tabindex="-1" role="dialog" aria-labelledby="itemLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+<div class="show-item">
+  <form id="item-add">
+    <fieldset>
+      <p>ITEMS</p>
+
+
+    </fieldset>
+  </form>
+</div>
+<button class="add-to-cart">Add to Cart</button>
+<p style="display: none" class="item-added">Item added to cart!</p>
+<p style="display: none" class="invalid">You must select a quantity greater than zero!</p>
+</div>
+</div>
+</div>
+</div>
 
 </body>
 
