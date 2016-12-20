@@ -16,11 +16,20 @@ const getAllProducts = () =>
     method: 'GET',
   });
 
-  const addItem = (data) =>
+const addItem = (data) =>
+    $.ajax ({
+    url: config.host + '/items',
+    method: 'POST',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    }
+  });
+
+  const getItems = () =>
       $.ajax ({
       url: config.host + '/items',
-      method: 'POST',
-      data,
+      method: 'GET',
       headers: {
         Authorization: 'Token token=' + store.user.token,
       }
@@ -32,4 +41,5 @@ const getAllProducts = () =>
     getOneProduct,
     getAllProducts,
     addItem,
+    getItems,
   };

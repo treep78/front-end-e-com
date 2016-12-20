@@ -3,6 +3,7 @@ const store = require('../store.js');
 const showAllProductsTemplate = require('../templates/product-thumb.handlebars');
 
 const showOneProductTemplate = require('../templates/products.handlebars');
+const cartTemplate = require('../templates/cart.handlebars');
 
 const getAllProductsSuccess = function(data) {
   store.products = data.products;
@@ -28,11 +29,20 @@ console.log('FAIL!');
 const addItemSuccess = function(data) {
   console.log('Item in cart', data);
   //  $('').html((data));
-   return data;
+  //  return data;
 };
 
 const addItemFailure = function() {
 console.log('FAIL!');
+};
+
+const getItemsSuccess = function(data) {
+  console.log('I\'m in the cart! This is my item data: ', data);
+   $('.cart-items').html(cartTemplate(data));
+};
+
+const getItemsFailure = function(error) {
+console.log('FAIL!, this is the error', error);
 };
 
 module.exports = {
@@ -42,4 +52,8 @@ module.exports = {
   getOneProductFailure,
   addItemSuccess,
   addItemFailure,
+  getItemsSuccess,
+  getItemsFailure,
+
+
 };

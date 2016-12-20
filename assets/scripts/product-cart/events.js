@@ -8,6 +8,13 @@ const getFormFields = require('../../../lib/get-form-fields');
 //
 // };
 
+const onGetItems  = function(){
+  console.log('All the items of the cart!');
+  api.getItems()
+    .then(ui.getItemsSuccess)
+    .catch(ui.getItemsFailure);
+};
+
 const onAddItem = function(event){
   event.preventDefault();
   let countData = getFormFields(event.target);
@@ -15,6 +22,9 @@ const onAddItem = function(event){
   console.log('ADD ME!', 'countData', countData);
     api.addItem(countData)
     .then(ui.addItemSuccess)
+    .then(function(data){
+      onGetItems(data);
+    })
     .catch(ui.addItemFailure);
 };
 
@@ -52,21 +62,19 @@ const onUpdateItem = function(){
 
 };
 
-const onGetItems  = function(){
 
-};
 
 const onGetOrderHx   = function(){
 
 };
 
 
-
 const addCartHandlers = function() {
-  // $('.cart-add').on('click', onAddItem);
+
+  $('#show-me-the-cart').on('click', onGetItems);
   $('#delete-item-from-cart').on('click', onDeleteItem);
   $('#update-item-in-cart').on('click', onUpdateItem);
-  $('#get-cart').on('click', onGetItems);
+  // $('#get-cart').on('click', onGetItems);
   $('#get-order-history').on('click', onGetOrderHx);
   $('#get-all-products').on('click', onGetOrderHx);
 };
