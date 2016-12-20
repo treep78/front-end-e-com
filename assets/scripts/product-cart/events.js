@@ -1,18 +1,21 @@
 'use strict';
 const api = require('./api');
 const ui = require('./ui');
-// const getFormFields = require('../../../lib/get-form-fields');
+// const store = require('../store.js');
+const getFormFields = require('../../../lib/get-form-fields');
 
 // const onGetAllProducts = function(){
 //
 // };
 
-const onAddItem = function(data, event){
+const onAddItem = function(event){
   event.preventDefault();
-  console.log('ADD ME!', data);
-  // api.addItem(data)
-  //   .then(ui.addItemSuccess)
-  //   .catch(ui.addItemFailure);
+  let countData = getFormFields(event.target);
+  console.log('this is the event', event);
+  console.log('ADD ME!', 'countData', countData);
+    api.addItem(countData)
+    .then(ui.addItemSuccess)
+    .catch(ui.addItemFailure);
 };
 
 
@@ -23,7 +26,8 @@ const onGetOneProduct = function(event){
   api.getOneProduct(productId)
     .then(ui.getOneProductSuccess)
     .then(function(data){
-      $('.cart-add').on('click', onAddItem(data));
+      console.log('this is data, after getOneProductSuccess', data);
+      $('.product-to-cart').on('submit', onAddItem);
     })
     .catch(ui.getOneProductFailure);
 };

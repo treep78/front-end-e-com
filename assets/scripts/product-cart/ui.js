@@ -25,9 +25,21 @@ const getOneProductFailure = function() {
 console.log('FAIL!');
 };
 
+const addItemSuccess = function(data) {
+  console.log('Item in cart', data);
+  //  $('').html((data));
+   return data;
+};
+
+const addItemFailure = function() {
+console.log('FAIL!');
+};
+
 module.exports = {
   getAllProductsSuccess,
   getAllProductsFailure,
   getOneProductSuccess,
   getOneProductFailure,
+  addItemSuccess,
+  addItemFailure,
 };
