@@ -44,7 +44,7 @@ and we focused our efforts on the CRUD actions as a team
 
 Front End Repo: https://github.com/Mod-Squad/front-end-e-com/blob/master/README.md
 Back End Repo: https://github.com/Mod-Squad/e-com-back-end
-Front End Demo Site:
+Front End Demo Site: https://mod-squad.github.io/front-end-e-com/
 Back End Demo Site: https://gentle-hamlet-35507.herokuapp.com
 
 ## User Stories
