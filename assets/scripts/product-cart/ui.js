@@ -45,6 +45,23 @@ const getItemsFailure = function(error) {
 console.log('FAIL!, this is the error', error);
 };
 
+const deleteItemSuccess = function(data) {
+  console.log('deleted', data);
+};
+
+const deleteItemFailure = function(error) {
+console.log('FAIL!, this is the delete error', error);
+};
+
+const updateItemSuccess = function(data) {
+  console.log('deleted', data);
+};
+
+const updateItemFailure = function(error) {
+console.log('FAIL!, this is the update error', error);
+};
+
+
 module.exports = {
   getAllProductsSuccess,
   getAllProductsFailure,
@@ -54,6 +71,9 @@ module.exports = {
   addItemFailure,
   getItemsSuccess,
   getItemsFailure,
-
+  deleteItemSuccess,
+  deleteItemFailure,
+  updateItemSuccess,
+  updateItemFailure,
 
 };
