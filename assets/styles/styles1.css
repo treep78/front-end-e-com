@@ -3,6 +3,18 @@
   margin-bottom: 30px;
 }
 
+.image-heaader-logo {
+    display: block;
+    position: absolute;
+    /* bottom: 0; */
+    top: 9%;
+    left: 18vw;
+    margin: 0 auto;
+    z-index: 10;
+    width: 65%;
+    background-size: cover;
+}
+
 .image-heaader {
   display: block;
   width: 100%;
@@ -33,7 +45,7 @@
     z-index: -1;
     position: absolute;
     bottom: -15px;
-    right: 414px;
+    right: 46vw;
     /* margin: 0 auto; */
 }
 
@@ -49,6 +61,15 @@
   width: 100%;
   background-color: black;
   position: fixed;
+}
+
+.title-bar-logo {
+    display: block;
+    margin: 0 auto;
+    width: 6%;
+    background-size: cover;
+    background-color: black;
+    border-radius: 100%;
 }
 
 .button-wrapper {
