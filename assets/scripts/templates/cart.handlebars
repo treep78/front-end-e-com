@@ -1,6 +1,5 @@
-
- {{#each serialized as |serialized|}}
-    <div class="row" data-id={{item.id}}>
+{{#each serialized as |serialized|}}
+    <div class="row" data-id={{serialized.id}}>
       <div class="col-md-3 cart-item-name">
         <p>{{serialized.name}}</p>
       </div>
@@ -8,12 +7,20 @@
         <p>${{serialized.price}}</p>
       </div>
       <div class="col-md-3 cart-item-quant">
-        <input class="quantity" type="number" min=1 step=1 value={{serialized.count}}>
-        <button type="button" class="update-cart-item">Update Item Quantity </button>
+        <form class="update-form" data-id={{serialized.id}}>
+          <div class="form-group">
+            <input class="quantity" type="number" min=1 step=1 value={{serialized.count}} name="item[count]">
+            <button type="submit" class="update-cart-item">Update Item Quantity {{serialized.id}} </button>
+          </div>
+        </form>
       </div>
       <div class="col-md-3">
-        <button type="button" class="delete-cart-item">Delte Item from Cart </button>
+        <button type="button" data-id={{serialized.id}} class="delete-cart-item">Delete Item from Cart </button>
         <br>
       </div>
     </div>
   {{/each}}
+  <h2>TOTAL</h2>
+  <div class="price-total">
+
+  </div>

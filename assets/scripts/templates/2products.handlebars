@@ -1,13 +1,11 @@
-<div data-id={{products._id}}></div>
-  <br>
-  <div class="product-content-wrapper">
-    <div class="product-image-wrapper"><img class="product-image" src={{product.image}} alt="http://imgur.com/qkPReeD"></div>
-    <div class="product-description-wrapper">
-      <p class="product-name">{{product.name}}</p>
-      <p class="product-description">{{product.description}}</p>
-      <p class="product-price">Price: {{product.price}}</p>
-    </div>
+<div data-id={{products._id}} class=product-content-wrapper>
+  <div class="product-text-wrapper">
+  <p class="product-title">{{product.name}}</p>
+  <p class="product-description">{{product.description}}</p>
+  <p class="product-price-wrapper">Price: $<span class="product-price"><p>{{product.price}}</p></span></p>
 </div>
+  <img class="product-image" src={{product.image}} title="source: imgur.com"/>
+
   <form class="product-to-cart">
     <div class="product">
       <input type="hidden" name="item[product_id]" value={{product._id}}>
@@ -17,7 +15,7 @@
       <input type="hidden" name="item[price]" value={{product.price}}>
     </div>
       <input type="hidden" name="item[image]" value={{product.image}}>
+      <p>{{product.price}}</p>
     <button class="cart-add add-cart-button" type="submit">Add to Cart</button>
   </form>
-  </div>
 </div>
