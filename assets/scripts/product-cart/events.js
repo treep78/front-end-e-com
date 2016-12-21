@@ -109,10 +109,10 @@ const onGetOneProduct = function(event){
     .catch(ui.getOneProductFailure);
 };
 
-const onGetAllProducts = function(data){
+const onGetAllProducts = function(){
   // event.preventDefault();
   console.log('You have ALL products.');
-  api.getAllProducts(data)
+  api.getAllProducts()
     .then(ui.getAllProductsSuccess)
     .then(function(){
       $('.prod-desc').on('click', onGetOneProduct);
@@ -120,8 +120,9 @@ const onGetAllProducts = function(data){
     .catch(ui.getAllProductsFailure);
 };
 
-const onGetOrderHx   = function(){
-
+const onGetOrderHx = function(data){
+  // console.log('These are my orders!');
+  api.getOrderHx(data);
 };
 
 

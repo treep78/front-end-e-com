@@ -5,9 +5,13 @@ const showAllProductsTemplate = require('../templates/product-thumb.handlebars')
 const showOneProductTemplate = require('../templates/products.handlebars');
 const cartTemplate = require('../templates/cart.handlebars');
 
+const StripeCheckoutSuccess = function(){
+  console.log('You\'ve successfully placed your order.');
+};
+
 const getAllProductsSuccess = function(data) {
   store.products = data.products;
-  console.log(data);
+  console.log('this is get all product data.products', data.products);
    $('#all-products').html(showAllProductsTemplate(data));
 
 };
@@ -68,7 +72,14 @@ const getPriceTotalSuccess = function(data) {
   // if(totalPrice.length>){
   //   totalPrice = totalPrice.splice(-2,0,'.');
   // }
-  let total = '$'+(data/100);
+  let total = ('$'+data).split('');
+  console.log('this is the total after the first line:', total);
+  total.splice(total.length-2,0,'.');
+  console.log('this is the total:', total);
+  if(total.length > 7){
+    total.splice(total.length-6,0,',');
+  }
+  total = total.join('');
   $('.price-total').html(total);
   store.totalCart = data;
   console.log(store.totalCart);
@@ -80,6 +91,7 @@ const getPriceTotalFailure = function(error) {
 };
 
 module.exports = {
+  StripeCheckoutSuccess,
   getAllProductsSuccess,
   getAllProductsFailure,
   getOneProductSuccess,

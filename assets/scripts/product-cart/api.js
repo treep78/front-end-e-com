@@ -55,6 +55,16 @@ const addItem = (data) =>
       }
     });
 
+    const getOrderHx = (data) =>
+        $.ajax ({
+        url: config.host + '/orders',
+        method: 'GET',
+        data,
+        headers: {
+          Authorization: 'Token token=' + store.user.token,
+        }
+      });
+
 
   module.exports = {
     getOneProduct,
@@ -63,4 +73,5 @@ const addItem = (data) =>
     getItems,
     deleteItem,
     updateItem,
+    getOrderHx,
   };
