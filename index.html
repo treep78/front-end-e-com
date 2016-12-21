@@ -33,6 +33,7 @@
               <li><button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#changePasswordModal">Change Password</button></li>
               <li><button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#signOutModal">Sign Out</button></li>
               <li><button type="button" id='cart-button' class="btn btn-primary btn-lg cart" data-toggle="modal" data-target="#cart">Cart</button></li>
+              <li><button type="button" id='get-order-history' class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orderHistoryModal">Get Order History</button></li>
             </ul>
           </li>
         </ul>
@@ -227,6 +228,35 @@
 </div>
 </div>
 
+<!-- ORDER HISTROY Modal STARTS here -->
+<div id="orderHistoryModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Purchase History</h4>
+      </div>
+      <div class="modal-body">
+        <div class="order-history-header-wrapper">
+          <p class="order-history-header col-xs-4">Order: </p>
+          <p class="order-history-header col-xs-4">Items: </p>
+          <p class="order-history-header col-xs-4">Date: </p>
+        </div>
+        <div class="order-history-handlebars">
+          <!-- order-history.handlebars.js STARTS here -->
+        <div class="order-history-wrapper">
+          <p class="order-history-id col-xs-4">2 </p>
+          <p class="order-history-items col-xs-4">McWatchface</p>
+          <p class="order-history-date col-xs-4">08-31-2017 </p>
+        </div>
+        <!-- order-history.handlebars.js STARTS here -->
+      </div>
+      <div class="modal-footer"></div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+<!-- ORDER HISTROY Modal ENDS here -->
 
 
 <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel">

@@ -120,15 +120,21 @@ const onGetAllProducts = function(){
     .catch(ui.getAllProductsFailure);
 };
 
-const onGetOrderHx = function(data){
+const onGetOrderHx = function(event){
+  event.preventDefault();
+  let orderHx = getFormFields(event.target);
   // console.log('These are my orders!');
-  api.getOrderHx(data);
+  api.getOrderHx(orderHx);
 };
 
+const onCreateOrderHx = function(data){
+  // console.log('This is an order!');
+  api.createOrderHx(data);
+};
 
 const addCartHandlers = function() {
   $('#get-order-history').on('click', onGetOrderHx);
-  $('#get-all-products').on('click', onGetOrderHx);
+  $('#checkout-button').on('click', onCreateOrderHx);
 };
 
 module.exports = {
