@@ -134,7 +134,7 @@ const onCreateOrderHx = function(data){
 
 const addCartHandlers = function() {
   $('#get-order-history').on('click', onGetOrderHx);
-  $('#checkout-button').on('click', onCreateOrderHx);
+  // $('#checkout-button').on('click', onCreateOrderHx);
 };
 
 module.exports = {
