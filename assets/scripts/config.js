@@ -1,7 +1,7 @@
 'use strict';
 
 const config = {
-  host: 'https://gentle-hamlet-35507.herokuapp.com'
+  host: 'http://localhost:4741'
 };
 
 module.exports = config;
