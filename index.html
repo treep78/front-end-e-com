@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Cookies</title>
+  <title>Watches</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
             </button>
-        <h2>Cookies</h2>
+        <h2>Watches</h2>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
@@ -33,6 +33,7 @@
               <li><button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#changePasswordModal">Change Password</button></li>
               <li><button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#signOutModal">Sign Out</button></li>
               <li><button type="button" id='cart-button' class="btn btn-primary btn-lg cart" data-toggle="modal" data-target="#cart">Cart</button></li>
+              <li><button type="button" id='get-order-history' class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orderHistoryModal">Get Order History</button></li>
             </ul>
           </li>
         </ul>
@@ -44,10 +45,10 @@
 
   <!--<button type="button" id='show-me-the-cart'>Cart2</button>-->
 
-  <h1>Cookies</h1>
+  <h1>Watches</h1>
 
   <div id="one-product">
-    I'M one PRODUCT!
+    <!--I'M one PRODUCT!-->
   </div>
 
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -205,7 +206,7 @@
   </div> -->
 
 
-  <div id='content' class="content">
+  <!-- <div id='content' class="content">
       <div id='products'>
       </div>
 
@@ -225,8 +226,37 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
+<!-- ORDER HISTROY Modal STARTS here -->
+<div id="orderHistoryModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Purchase History</h4>
+      </div>
+      <div class="modal-body">
+        <div class="order-history-header-wrapper">
+          <p class="order-history-header col-xs-4">Order: </p>
+          <p class="order-history-header col-xs-4">Items: </p>
+          <p class="order-history-header col-xs-4">Date: </p>
+        </div>
+        <div class="order-history-handlebars">
+          <!-- order-history.handlebars.js STARTS here -->
+        <div class="order-history-wrapper">
+          <p class="order-history-id col-xs-4">2 </p>
+          <p class="order-history-items col-xs-4">McWatchface</p>
+          <p class="order-history-date col-xs-4">08-31-2017 </p>
+        </div>
+        <!-- order-history.handlebars.js STARTS here -->
+      </div>
+      <div class="modal-footer"></div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+<!-- ORDER HISTROY Modal ENDS here -->
 
 
 <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel">
@@ -239,16 +269,16 @@
 <div class="modal-body">
 <div class="show-cart">
   <div class="row cart-row">
-    <div class="col-md-3">
+    <div class="col-xs-3">
       <h5>Item</h5>
     </div>
-    <div class="col-md-3">
+    <div class="col-xs-3">
       <h5>Price</h5>
     </div>
-    <div class="col-md-3">
+    <div class="col-xs-3">
       <h5>Quantity</h5>
     </div>
-    <div class="col-md-3">
+    <div class="col-xs-3">
       <h5>Delete</h5>
     </div>
     <br>
@@ -259,8 +289,13 @@
     I'm in a CART!
   </div>
 
-  <h3 class="no-items">Your Cart is Empty!</h3>
-  <h5>Total: </h5>
+  <h2>TOTAL</h2>
+  <div class="price-total">
+
+  </div>
+
+  <!-- <h3 class="no-items">Your Cart is Empty!</h3>
+  <h5>Total: </h5> -->
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <button style="display: none" type="button" class="btn btn-default create-order" id="save-order-button">Save for later</button>
   <button style="display" type="button" class="btn btn-default checkout" id="checkout-button">Checkout</button>
