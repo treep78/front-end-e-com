@@ -26,8 +26,8 @@ const createOrder = (data) => {
 const addStripeCharge = (data) => {
   // console.log(data);
   return new Promise((resolve, reject) => {
-    return $.ajax({
-      url: config.host + '/charge',
+     return $.ajax({
+      url: config.host + '/charges',
       method: "POST",
       headers: {
         Authorization: 'Token token=' + store.user.token,
@@ -38,7 +38,7 @@ const addStripeCharge = (data) => {
       },
       error: (error) => {
         reject(error);
-      },
+      }
     });
   });
 };
