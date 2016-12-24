@@ -1,0 +1,7 @@
+{{#each orders as |orders|}}
+<div class="order-history-wrapper">
+  <p class="order-history-id col-xs-4">{{orders.id}}</p>
+  <p class="order-history-items col-xs-4">{{orders.items}}</p>
+  <p class="order-history-date col-xs-4">{{orders.date}}</p>
+</div>
+{{/each}}
