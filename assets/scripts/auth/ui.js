@@ -11,6 +11,8 @@ const signUpSuccess = function(signUpData) {
 
 const signUpFailure = function() {
   $('#sign-up-in-modal-messages').html('Oops, something went wrong, trying signing up again.');
+
+  $('#sign-up').trigger('reset');
 };
 
 const signInSuccess = function(data) {
@@ -22,12 +24,13 @@ $('#sign-in').trigger('reset');
 $('#sign-up-in-modal-messages').html('You\'ve successfully signed in!');
 $('#auth-modal').hide(1000);
 // show sign out button, change password buttons, view cart buttons
-$('.im-sign-in').show();
-$('.im-sign-out').hide();
+$('.signed-in').show();
+$('.signed-out').hide();
 };
 
 const signInFailure = function() {
 $('#sign-up-in-modal-messages').html('Oops, something went wrong, trying signing in again.');
+$('#sign-in').trigger('reset');
 };
 
 const changePasswordSuccess = function() {
@@ -43,8 +46,8 @@ const signOutSuccess = function() {
   // replace message div content with ('')?
   $('#sign-out-modal-messages').html('You\'ve successfully signed out.');
   // show sign in and sign up buttons
-  $('.im-sign-in').hide();
-  $('.im-sign-out').show();
+  $('.signed-in').hide();
+  $('.signed-out').show();
 };
 
 const failure = function() {

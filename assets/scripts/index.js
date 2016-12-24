@@ -15,6 +15,7 @@ $(()=>{
   productEvents.addCartHandlers();
   productEvents.onGetAllProducts();
   stripeEvents.addHandlers();
+  $('.signed-in').hide();
 
   // gearScroll.gearScroll();
   // gearScroll.browser_transform();

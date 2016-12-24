@@ -127,9 +127,17 @@ const onGetOrderHx = function(event){
   api.getOrderHx(orderHx);
 };
 
-const onCreateOrderHx = function(data){
-  // console.log('This is an order!');
-  api.createOrderHx(data);
+const onCreateOrderHx = function(){
+  console.log('I\'m creating an order');
+  api.getItems()
+    .then(function(cartData){
+      let order = {};
+      for(let item in cartData.serialized){
+        console.log('This is cartData.serialized', cartData.serialized);
+      }
+
+  });
+  // api.createOrderHx(data);
 };
 
 const addCartHandlers = function() {
@@ -140,4 +148,6 @@ const addCartHandlers = function() {
 module.exports = {
   addCartHandlers,
   onGetAllProducts,
+  onCreateOrderHx,
+
 };
