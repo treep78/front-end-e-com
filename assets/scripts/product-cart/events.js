@@ -89,9 +89,10 @@ const onAddItem = function(event){
   console.log('ADD ME!', 'countData', countData);
     api.addItem(countData)
     .then(ui.addItemSuccess)
-    .then(function(data){
-      onGetItems(data);
-    })
+    // .then(function(data){
+    //   onGetItems(data);
+    //   console.log('after onGetItems');
+    // })
     .catch(ui.addItemFailure);
 };
 

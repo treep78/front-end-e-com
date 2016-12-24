@@ -11,7 +11,6 @@ const signUpSuccess = function(signUpData) {
 
 const signUpFailure = function() {
   $('#sign-up-in-modal-messages').html('Oops, something went wrong, trying signing up again.');
-
   $('#sign-up').trigger('reset');
 };
 
@@ -22,7 +21,9 @@ const signInSuccess = function(data) {
   console.log(store.user);
 $('#sign-in').trigger('reset');
 $('#sign-up-in-modal-messages').html('You\'ve successfully signed in!');
-$('#auth-modal').hide(1000);
+console.log('You\'ve successfully signed in!');
+// $('#signInModal').hide(2000);
+// $('#authModal').hide();
 // show sign out button, change password buttons, view cart buttons
 $('.signed-in').show();
 $('.signed-out').hide();

@@ -36,8 +36,8 @@ const addItemSuccess = function(data) {
   //  return data;
 };
 
-const addItemFailure = function() {
-  console.log('FAIL!');
+const addItemFailure = function(error) {
+  console.log('FAIL!', error);
 };
 
 const getItemsSuccess = function(data) {
