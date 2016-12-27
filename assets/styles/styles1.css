@@ -95,6 +95,12 @@
 
 }
 
+/*///// AUTH modal styles /////*/
+.ufm-change-password, .ufm-cart, .ufm-single-product {
+  font-family: 'Open Sans Condensed', sans-serif;
+  float: right;
+}
+
 
 /* product-thumb.handlebars */
 
