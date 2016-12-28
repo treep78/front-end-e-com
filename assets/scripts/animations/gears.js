@@ -100,5 +100,5 @@ function browser_transform(transTarget, transValue)
 //
 module.exports = {
   gearScroll,
-  // browser_transform
+  browser_transform
 };

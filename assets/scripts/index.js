@@ -8,7 +8,10 @@ const productEvents = require('../scripts/product-cart/events.js');
 const stripeEvents = require('../scripts/stripe/stripe-events.js');
 
 // animations for stuff
-// const gearScroll = require('./animations/gears.js');
+const gearScroll = require('./animations/gears.js');
+// const sr = require('./animations/scroll-reveal.js');
+
+
 
 $(()=>{
   authEvents.addHandlers();
@@ -17,9 +20,11 @@ $(()=>{
   stripeEvents.addHandlers();
   $('.signed-in').hide();
 
-  // gearScroll.gearScroll();
-  // gearScroll.browser_transform();
-  // $(window).scroll(gearScroll());
+  gearScroll.gearScroll();
+  gearScroll.browser_transform();
+
   $('.sign-in').val('yo@yo.com');
-$('.sign-in').val('yo');
+  $('.sign-in').val('yo');
+
+
 });
