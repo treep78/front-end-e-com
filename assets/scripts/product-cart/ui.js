@@ -5,6 +5,7 @@ const showAllProductsTemplate = require('../templates/product-thumb.handlebars')
 const showOneProductTemplate = require('../templates/products.handlebars');
 const cartTemplate = require('../templates/cart.handlebars');
 const orderHxTemplate = require('../templates/order-history.handlebars');
+const sr = require('../animations/scroll-reveal.js');
 
 const StripeCheckoutSuccess = function(){
   console.log('You\'ve successfully placed your order.');
@@ -13,9 +14,8 @@ const StripeCheckoutSuccess = function(){
 const getAllProductsSuccess = function(data) {
   store.products = data.products;
   console.log('this is get all product data.products', data.products);
-   $('#all-products').html(showAllProductsTemplate(data));
-
-
+  $('#all-products').html(showAllProductsTemplate(data));
+  sr.revealWatch('.product-title', '.product-thumb');
 };
 
 const getAllProductsFailure = function() {

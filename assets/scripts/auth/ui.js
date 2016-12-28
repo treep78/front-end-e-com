@@ -26,7 +26,10 @@ console.log('You\'ve successfully signed in!');
 // $('#authModal').hide();
 // show sign out button, change password buttons, view cart buttons
 $('.signed-in').show();
+// $('.cart-add').show();
 $('.signed-out').hide();
+$('#cart-button').hide();
+$('#checkout-button').hide();
 };
 
 const signInFailure = function() {
