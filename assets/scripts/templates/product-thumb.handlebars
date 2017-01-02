@@ -1,9 +1,6 @@
 {{#each products as |product|}}
-<div class="product-module prod-desc" data-id={{product._id}}>
-  <hr>
-  {{product.name}} <br>
-  <hr>
-  <!--<img class="product-thumb" src={{product.image}} alt="http://imgur.com/qkPReeD">-->
-  <p class="product-name"></p>
+<div class="product-module prod-desc" data-id={{product._id}} data-toggle="modal" data-target="#productModal">
+  <p class="product-title" data-id={{product._id}}>{{product.name}}</p> <br>
+  <img class="product-thumb" src={{product.image}} alt="http://imgur.com/qkPReeD" data-id={{product._id}}>
 </div>
 {{/each}}

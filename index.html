@@ -6,76 +6,60 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Work+Sans:700" rel="stylesheet">
+
   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+
+
 </head>
 
 <body>
 
-  <!--NAVBAR STARTS HERE -->
-
-   <nav class="navbar navbar-inverse">
-
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-            </button>
-        <h2>Watches</h2>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CLICK HERE for Navigation Options</a>
-            <ul class="dropdown-menu">
-              <li><button type="button" class="btn btn-primary btn-lg signed-out" data-toggle="modal" data-target="#signUpModal">Sign Up</button></li>
-              <li><button type="button" class="btn btn-primary btn-lg signed-out" data-toggle="modal" data-target="#signInModal">Sign In</button></li>
-              <li><button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#changePasswordModal">Change Password</button></li>
-              <li><button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#signOutModal">Sign Out</button></li>
-              <li><button type="button" id='cart-button' class="btn btn-primary btn-lg cart" data-toggle="modal" data-target="#cart">Cart</button></li>
-              <li><button type="button" id='get-order-history' class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orderHistoryModal">Get Order History</button></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <div class="title-bar">
+      <img src="../assets/styles/images/wmw_logo_white_800x800.png" class="title-bar-logo" alt="Watchy McWatchface">
+  </div>
+  <div class="header">
+    <img src="../assets/styles/images/wmw_txt_white_800x500.png" class="image-heaader-logo" alt="Watchy McWatchface">
+    <img src="../assets/styles/images/header.jpg" class="image-heaader" alt="Watchy McWatchface">
     </div>
-  </nav> -->
-  <!--NAVBAR ENDS HERE-->
-
-
-  <!--<button type="button" id='show-me-the-cart'>Cart2</button>-->
-
-  <h1>Watches</h1>
-
-  <div id="one-product">
-    <!--I'M one PRODUCT!-->
+  <div class="navigation">
+    <div class="button-wrapper">
+        <button class="nav-button signed-in" type="button" id='cart-button' data-toggle="modal" data-target="#cart">Cart</button>
+        <button class="nav-button" type="button" data-toggle="modal" data-target="#authModal" aria-haspopup="true" aria-expanded="false">Login</button>
+        <button class="nav-button signed-in" type="submit" data-toggle="modal" data-target="#orderHistoryModal">Purchases</button>
+        <div id="gears">
+          <img class="gear_md" id="gear1" src="http://www.freeiconspng.com/uploads/gear-11-icon--free-icons-4.png" />
+        </div>
+    </div>
   </div>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div id="container" class="content-container">
+    <div class="background-gear">
 
-    <div id="all-products" class="container">
-      <div class="col-xs-4">
-      </div>
     </div>
 
 
+    <div id="all-products"></div>
 
-    <!--<a href="#" data-toggle="modal" data-target="#productModal" id="get-one-product">
-          <div class="product-thumb-handlebars">
 
-          </div> -->
 
-    <!-- <a href="#" data-toggle="modal" data-target="#productModal" >
-        <div class="product-module">
+
+<!-- AUTH button modal-->
+      <div id="authModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <button type="button" class="btn btn-primary btn-lg signed-out" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+            <button type="button" class="btn btn-primary btn-lg signed-out" data-toggle="modal" data-target="#signInModal">Sign In</button>
+            <button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
+            <button type="button" class="btn btn-primary btn-lg signed-in" data-toggle="modal" data-target="#signOutModal">Sign Out</button>
+          </div>
         </div>
-      </a> -->
+      </div>
+<!-- AUTH button modal-->
 
-
-  <!-- Sign-up Modal -->
-
+<!-- SIGN-UP modal ENDS here-->
    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signInLabel">
-
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -98,14 +82,15 @@
             </div>
             <button type="submit" name="submit" class="sign-up-button">Submit</button>
           </form>
+          <p class="signup-messages"></p>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+<!-- SIGN-UP modal ENDS here-->
 
-  <!-- Sign-in modal -->
 
-
+<!-- SIGN-IN modal STARTS here-->
    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInLabel">
 
     <div class="modal-dialog" role="document">
@@ -126,16 +111,16 @@
             </div>
             <button type="submit" name="submit" class="sign-in-button">Submit</button>
           </form>
+          <p class="signin-messages"></p>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+<!-- SIGN-IN modal ENDS here-->
 
-  <!-- Change password modal -->
 
-
+<!-- CHANGEPASSWORD modal STARTS here-->
    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel">
-
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -153,17 +138,17 @@
               <input type="password" name="passwords[new]" placeholder="New Password">
             </div>
             <button type="submit" name="submit" class="change-password-button">Submit</button>
+            <p class="ufm-change-password">This is a User Facing Message for Change Password</p>
           </form>
+          <p class="changepw-messages"></p>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+<!-- CHANGEPASSWORD modal ENDS here-->
 
-  <!-- Sign-out modal -->
-
-
+  <!-- SIGN-OUT modal STARTS here-->
   <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signOutLabel">
-
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -176,57 +161,89 @@
             </div>
             <button type="submit" name="submit" class="sign-out-button">Sign Out</button>
           </form>
+          <p class="signout-messages"></p>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- PRODUCT Modal STARTS here -->
-  <!-- <div id="productModal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content product-handlebars">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Modal title</h4>
-        </div>
-        <div class="modal-body">
-          <p class="product-description">Bacon ipsum dolor amet t-bone pastrami sausage filet mignon chicken.
-            Cupim turducken pancetta venison jerky Alcatra swine ham hock, salami
-            drumstick chicken jowl. Kielbasa pork belly pork loin picanha pastrami.
-          </p>
-          <img class="product-image" src="http://i.imgur.com/nrGTQt4.jpg" alt="adam on a rock in iceland" title="source: imgur.com"/>
-
-          <button class="add-cart" type="button">Add to Cart</button>
-        </div>
-        <div class="modal-footer">
-
-        </div>
-      </div>
-    </div>
-  </div> -->
+<!-- SIGN-OUT modal ENDS here-->
 
 
-  <!-- <div id='content' class="content">
-      <div id='products'>
-      </div>
 
-
-  <form id="get-orders">
+  <!--<form id="get-orders">
     <fieldset>
       <legend>Get Order History</legend>
       <input type="submit" name="submit" value="Get Order History">
     </fieldset>
   </form>
-
-
   <h3> Order History </h3>
   <h4 id="order-history"> </h4>
-
-</div>
-</div>
-</div>
-</div>
 </div> -->
+
+
+
+<!-- PRODUCT Modal STARTS here -->
+  <div id="productModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div  id="one-product" class="modal-body">
+          <!-- product.handlebars template STARTS here -->
+
+            <!-- product.handlebars template ENDS here -->
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div>  <!-- /.modal-dialog -->
+  </div><!-- PRODUCT Modal ENDS here -->
+  <!-- PRODUCT Modal ENDS here -->
+
+
+<!--CART modal STARTS here -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel">
+<div class="modal-dialog-cart" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="cartLabel">Shopping Cart</h4>
+</div>
+<div class="modal-body">
+<div class="show-cart">
+  <div class="row cart-row">
+    <div class="col-md-3">
+      <h5>Item</h5>
+    </div>
+    <div class="col-md-3">
+      <h5>Price</h5>
+    </div>
+    <div class="col-md-3">
+      <h5>Quantity</h5>
+    </div>
+    <div class="col-md-3">
+      <h5>Delete</h5>
+    </div>
+    <br>
+  </div>
+  <div class="cart-items">
+    I'm in a CART!
+  </div>
+
+  <!--<h3 class="no-items">Your Cart is Empty!</h3>
+  <h5>Total: </h5> -->
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <button style="display: none" type="button" class="btn btn-default create-order" id="save-order-button">Save for later</button>
+  <p class="ufm-cart">This is a User Facing Message for Cart</p>
+  <button style="display" type="button" class="btn btn-default checkout" id="checkout-button">Checkout</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--CART modal ENDS here -->
+
 
 <!-- ORDER HISTROY Modal STARTS here -->
 <div id="orderHistoryModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
@@ -242,94 +259,36 @@
           <p class="order-history-header col-xs-4">Items: </p>
           <p class="order-history-header col-xs-4">Date: </p>
         </div>
-        <div class="order-history-handlebars">
+        <div id="order-history" class="order-history-handlebars">
           <!-- order-history.handlebars.js STARTS here -->
-        <div class="order-history-wrapper">
+      <!--  <div class="order-history-wrapper">
           <p class="order-history-id col-xs-4">2 </p>
           <p class="order-history-items col-xs-4">McWatchface</p>
           <p class="order-history-date col-xs-4">08-31-2017 </p>
-        </div>
+        </div> -->
         <!-- order-history.handlebars.js STARTS here -->
       </div>
-      <div class="modal-footer"></div>
+      <div class="modal-footer">
+        <form id="get-orders">
+          <fieldset>
+            <legend>Get Order History</legend>
+            <input type="submit" name="submit" value="Get Order History">
+          </fieldset>
+        </form>
+      </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-</div>
 <!-- ORDER HISTROY Modal ENDS here -->
-
-
-<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title" id="cartLabel">Shopping Cart</h4>
-</div>
-<div class="modal-body">
-<div class="show-cart">
-  <div class="row cart-row">
-    <div class="col-xs-3">
-      <h5>Item</h5>
-    </div>
-    <div class="col-xs-3">
-      <h5>Price</h5>
-    </div>
-    <div class="col-xs-3">
-      <h5>Quantity</h5>
-    </div>
-    <div class="col-xs-3">
-      <h5>Delete</h5>
-    </div>
-    <br>
-  </div>
-
-
-  <div class="cart-items">
-    I'm in a CART!
-  </div>
-
-  <h2>TOTAL</h2>
-  <div class="price-total">
-
-  </div>
-
-  <!-- <h3 class="no-items">Your Cart is Empty!</h3>
-  <h5>Total: </h5> -->
-  <script src="https://checkout.stripe.com/checkout.js"></script>
-  <button style="display: none" type="button" class="btn btn-default create-order" id="save-order-button">Save for later</button>
-  <button style="display" type="button" class="btn btn-default checkout" id="checkout-button">Checkout</button>
-</div>
-</div>
-</div>
-</div>
 </div>
 
-
-<div class="modal fade " id="item" tabindex="-1" role="dialog" aria-labelledby="itemLabel">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-</div>
-<div class="modal-body">
-<div class="show-item">
-  <form id="item-add">
-    <fieldset>
-      <p>ITEMS</p>
-
-
-    </fieldset>
-  </form>
-</div>
-<button class="add-to-cart">Add to Cart</button>
-<p style="display: none" class="item-added">Item added to cart!</p>
-<p style="display: none" class="invalid">You must select a quantity greater than zero!</p>
-</div>
-</div>
-</div>
 </div>
 
+<!--<script>
+$('.image-heaader').scroll(function() {
+console.log("Hello Pete");
+});
+</script> -->
 
 </body>
 

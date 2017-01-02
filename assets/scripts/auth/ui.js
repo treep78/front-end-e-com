@@ -3,48 +3,71 @@
 const store = require('../store.js');
 
 
+const clear = (modal) => {
+    setTimeout(function() {
+        $(modal).modal('hide');
+    }, 1500);
+    $(modal).on('hidden.bs.modal', function() {
+        $(this).find("input,textarea,select").val('').end();
+        $('.modal-success').text('');
+    });
+};
+
+
 const signUpSuccess = function(signUpData) {
   $('#sign-up').trigger('reset');
-  $('#sign-up-in-modal-messages').html('You\'ve successful signed up!');
+  $('.signup-messages').html('You may Login now.');
+  clear('#signUpModal');
   return signUpData;
 };
 
 const signUpFailure = function() {
   $('#sign-up-in-modal-messages').html('Oops, something went wrong, trying signing up again.');
+  $('#sign-up').trigger('reset');
 };
 
 const signInSuccess = function(data) {
   console.log(data.user);
+  // $('.cart-add').show();
   store.user = data.user;
   store.user.id = data.user._id;
   console.log(store.user);
 $('#sign-in').trigger('reset');
-$('#sign-up-in-modal-messages').html('You\'ve successfully signed in!');
-$('#auth-modal').hide(1000);
+console.log('You\'ve successfully signed in!');
+// $('#signInModal').hide(2000);
+// $('#authModal').hide();
 // show sign out button, change password buttons, view cart buttons
-$('.im-sign-in').show();
-$('.im-sign-out').hide();
+$('.signed-in').show();
+
+$('.signed-out').hide();
+$('#cart-button').hide();
+$('#checkout-button').hide();
+$('.signin-messages').html('You have logged in!');
+clear('#signInModal');
 };
 
 const signInFailure = function() {
-$('#sign-up-in-modal-messages').html('Oops, something went wrong, trying signing in again.');
+$('.signin-messages').html('Oops, something went wrong, try signing in again.');
+$('#sign-in').trigger('reset');
 };
 
 const changePasswordSuccess = function() {
 $('#change-password').trigger('reset');
-$('#change-password-modal-messages').html('You\'ve successfully changed your password.');
+$('.changepw-messages').html('You\'ve successfully changed your password.');
+clear('#changePasswordModal');
 };
 
 const changePasswordFailure = function() {
-$('#change-password-modal-messages').html('Oops, something went wrong, trying changing your password again.');
+$('.changepw-messages').html('Oops, something went wrong, trying changing your password again.');
 };
 
 const signOutSuccess = function() {
   // replace message div content with ('')?
-  $('#sign-out-modal-messages').html('You\'ve successfully signed out.');
+  $('.signout-messages').html('You have successfully signed out.');
   // show sign in and sign up buttons
-  $('.im-sign-in').hide();
-  $('.im-sign-out').show();
+  $('.signed-in').hide();
+  $('.signed-out').show();
+  clear('#signOutModal');
 };
 
 const failure = function() {

@@ -1,7 +1,7 @@
 'use strict';
 const api = require('./api');
 const ui = require('./ui');
-// const store = require('../store.js');
+const store = require('../store.js');
 const getFormFields = require('../../../lib/get-form-fields');
 
 
@@ -13,6 +13,9 @@ const onUpdateItem = function(event){
   console.log('I\'m UPDATED itemId and countData', itemId, data);
   api.updateItem(itemId, data)
   .then(ui.updateItemSuccess)
+  .then(function(){
+    onGetItems();
+  })
   .catch(ui.updateItemFailure);
 };
 
@@ -21,6 +24,9 @@ const onDeleteItem = function(){
   console.log('DELETED', id);
   api.deleteItem(id)
     .then(ui.deleteItemSuccess)
+    .then(function(){
+      onGetItems();
+    })
     .catch(ui.deleteItemFailure);
 };
 
@@ -91,6 +97,7 @@ const onAddItem = function(event){
     .then(ui.addItemSuccess)
     .then(function(data){
       onGetItems(data);
+      console.log('after onGetItems');
     })
     .catch(ui.addItemFailure);
 };
@@ -122,22 +129,48 @@ const onGetAllProducts = function(){
 
 const onGetOrderHx = function(event){
   event.preventDefault();
-  let orderHx = getFormFields(event.target);
   // console.log('These are my orders!');
-  api.getOrderHx(orderHx);
+  api.getOrderHx()
+    .then(ui.getOrderHxSuccess)
+    .catch(ui.getOrderHxFailure);
 };
 
-const onCreateOrderHx = function(data){
-  // console.log('This is an order!');
-  api.createOrderHx(data);
+// const onClearCart = function(){
+//   ui.clearCart;
+// };
+
+const onCreateOrderHx = function(){
+  console.log('I\'m creating an order');
+  let data = {
+    order: {
+      items: store.user.serialized
+    }
+  };
+  api.createOrderHx(data)
+    .then(ui.createOrderHxSuccess)
+    .catch(ui.createOrderHxFailure);
+  // api.getItems()
+    // .then(function(data){
+    //   let order = {};
+      // for(let item in data.serialized){
+      // //   console.log('This is cartData', cartData);
+      //   order[item] = data.serialized[item];
+      // //   console.log('This is cartData.serialized[items]', cartData.serialized[item]);
+      // }
+  //     console.log('this is data', data);
+  //     api.createOrderHx(data);
+  // });
+
 };
 
 const addCartHandlers = function() {
-  $('#get-order-history').on('click', onGetOrderHx);
-  // $('#checkout-button').on('click', onCreateOrderHx);
+  $('#get-orders').on('click', onGetOrderHx);
+  $('#save-order-button').on('click', onGetItems);
 };
 
 module.exports = {
   addCartHandlers,
   onGetAllProducts,
+  onCreateOrderHx,
+
 };
