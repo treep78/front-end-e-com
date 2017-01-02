@@ -27,7 +27,7 @@ const getAllProductsFailure = function() {
 const getOneProductSuccess = function(data) {
   console.log('Yay data', data);
    $('#one-product').html(showOneProductTemplate(data));
-    $('.cart-add').hide();
+    // $('.cart-add').hide();
    return data;
 };
 
