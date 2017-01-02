@@ -80,7 +80,7 @@
     height: 130px;
     z-index: -1;
      position: absolute;
-     bottom: -15px; 
+     bottom: -15px;
      right: 46vw;
      margin: 0 auto;
      overflow: hidden;
@@ -290,6 +290,10 @@
   font-weight: 400;
   width: 15%;
 }
+
+/*.cart-add {
+  visibility: hidden;
+}*/
 
 .checkout-button {
   float: right;
