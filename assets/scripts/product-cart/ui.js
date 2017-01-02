@@ -7,6 +7,8 @@ const cartTemplate = require('../templates/cart.handlebars');
 const orderHxTemplate = require('../templates/order-history.handlebars');
 const sr = require('../animations/scroll-reveal.js');
 
+const api = require('./api.js');
+
 const StripeCheckoutSuccess = function(){
   console.log('You\'ve successfully placed your order.');
 };
@@ -100,6 +102,16 @@ const getPriceTotalFailure = function(error) {
 
 const clearCart = function(){
   console.log('I\'m clearing the cart');
+  api.getItems()
+    .then(data => {
+      console.log('Cart Contents: ',data);
+      //data.serialized[0]
+      for(let item in data.serialized) {
+        api.deleteItem(data.serialized[item].id);
+      }
+      return('Cleared!');
+    })
+    .catch(deleteItemFailure);
   store.user.serialized = [];
   $('.cart-items').html('Your order has been placed. View your Purchases to see past orders.');
   $('#checkout-button').hide();
