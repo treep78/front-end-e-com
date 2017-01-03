@@ -22,7 +22,7 @@ const signUpSuccess = function(signUpData) {
 };
 
 const signUpFailure = function() {
-  $('#sign-up-in-modal-messages').html('Oops, something went wrong, trying signing up again.');
+  $('.signup-messages').html('Oops, something went wrong, trying signing up again.');
   $('#sign-up').trigger('reset');
 };
 
@@ -67,6 +67,7 @@ const signOutSuccess = function() {
   // show sign in and sign up buttons
   $('.signed-in').hide();
   $('.signed-out').show();
+  $('#order-history').empty();
   clear('#signOutModal');
 };
 

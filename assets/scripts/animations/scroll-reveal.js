@@ -7,7 +7,7 @@ const revealWatch = function(element1, element2){
   delay: 400,
   origin: 'left',
   opacity: 0,
-  viewFactor: 0.5,
+  viewFactor: 0.1,
   reset: true
 });
   window.sr.reveal(element2, {
@@ -16,7 +16,7 @@ const revealWatch = function(element1, element2){
     delay: 400,
     origin: 'bottom',
     opacity: 0,
-    viewFactor: 0.5,
+    viewFactor: 0.1,
     reset: true
   });
 };
