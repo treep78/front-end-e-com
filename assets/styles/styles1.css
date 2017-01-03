@@ -96,7 +96,7 @@
     background-color: #a94442;
     overflow: auto;
     text-align: center;
-    background-image: url(./images/right-watch.jpg);
+    background-image: url(http://i.imgur.com/DHjur2T.jpg);
     background-position: right;
     background-size: 50%;
     background-repeat: no-repeat;
@@ -152,7 +152,7 @@
     height: 500px;
     position: fixed;
     /* top: 550px; */
-    background-image: url(./images/arm_400x400.png);
+    background-image: url(http://i.imgur.com/2ceJJEZ.png);
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -163,7 +163,7 @@
 /*////// Body Image ///////*/
 
 .background-image {
-    background-image: url(./images/Portuguese_background_2015_final.jpg);
+    background-image: url(http://i.imgur.com/o5HS51F.jpg);
     background-size: 111%;
     background-position: center;
     width: 100%;
@@ -213,7 +213,7 @@
     min-width: 280px;
     /* border: 1px solid purple; */
     clear: right;
-    margin: 300px auto 0 auto;
+    margin: 500px auto 0 auto;
 }
 
 .product-thumb {
@@ -247,7 +247,7 @@ position: relative;
 
 .product-title {
     font-family: 'Work Sans', sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 6px;
@@ -295,22 +295,36 @@ position: relative;
 
 
 
-/*////////   product.handlebars /////// */
+/*//////// {{}}  PRODUCT.HANDLEBARS {{}} /////// */
 
 .product-to-cart  {
   display: hidden;
 }
 
+.product-module-handlebars {
+    margin: 10px auto;
+}
+
 .product-name {
     font-family: 'Work Sans', sans-serif;
     font-size: 6vmin;
-    font-weight: 100;
-    float: left;
+    font-weight: 500;
+    /*float: left;
     position: absolute;
     top: -30px;
-    left: 0px;
+    left: 0px;*/
     /* z-index: 0; */
-    color: white;
+    color: black;
+}
+
+.product-description-thumb {
+    width: 80%;
+    display: block;
+    /*float: left;*/
+    /* background-size: cover; */
+    /* background-position: center; */
+    margin: 0 auto;
+    /* height: 80%; */
 }
 
 .product-content-wrapper {
@@ -542,4 +556,25 @@ position: relative;
 
  .modal-footer {
   border-top: 0px solid !important;
+}
+
+.footer{
+  width: 100%;
+  height: 100px;
+  background-color: rgba(51, 51, 51, 1);
+}
+
+.footer-title{
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  color: rgba(254, 48, 48, 1);
+  padding-left: 10px;
+}
+
+.sqaud-link {
+  display: block;
+  color: white;
+  font-size: 12px;
+  padding-left: 10px;
+  text-decoration: none;
 }
