@@ -1269,7 +1269,7 @@ webpackJsonp([0],[
 	};
 
 	var signUpFailure = function signUpFailure() {
-	  $('#sign-up-in-modal-messages').html('Oops, something went wrong, trying signing up again.');
+	  $('.signup-messages').html('Oops, something went wrong, trying signing up again.');
 	  $('#sign-up').trigger('reset');
 	};
 
@@ -1314,6 +1314,7 @@ webpackJsonp([0],[
 	  // show sign in and sign up buttons
 	  $('.signed-in').hide();
 	  $('.signed-out').show();
+	  $('#order-history').empty();
 	  clear('#signOutModal');
 	};
 
@@ -1767,11 +1768,11 @@ webpackJsonp([0],[
 
 	  return "<div class=\"product-module prod-desc\" data-id="
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1._id : stack1), depth0))
-	    + " data-toggle=\"modal\" data-target=\"#productModal\">\n  <p class=\"product-title\" data-id="
+	    + " data-toggle=\"modal\" data-target=\"#productModal\">\n<div class\"product-thumb-banner\">\n  <img src=\"http://i.imgur.com/AyEtmNW.png\" class=\"bolt-container\"/>\n  <p class=\"product-title\" data-id="
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1._id : stack1), depth0))
 	    + ">"
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1.name : stack1), depth0))
-	    + "</p> <br>\n  <img class=\"product-thumb\" src="
+	    + "</p> <br>\n</div>\n  <img class=\"product-thumb\" src="
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1.image : stack1), depth0))
 	    + " alt=\"http://imgur.com/qkPReeD\" data-id="
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1._id : stack1), depth0))
@@ -2982,17 +2983,17 @@ webpackJsonp([0],[
 	module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
-	  return "  <div class=\"product-module prod-desc\" data-id="
+	  return "  <div class=\"product-module-handlebars prod-desc\" data-id="
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.products : depth0)) != null ? stack1._id : stack1), depth0))
-	    + ">\n    <hr>\n    $"
+	    + ">\n    <p class=\"product-name\">"
+	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.product : depth0)) != null ? stack1.name : stack1), depth0))
+	    + "</p>\n    <hr>\n    $"
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.product : depth0)) != null ? stack1.price : stack1), depth0))
 	    + "<br>\n    <hr>\n    "
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.product : depth0)) != null ? stack1.description : stack1), depth0))
-	    + " <br>\n    <hr>\n    <img class=\"product-thumb\" src="
+	    + " <br>\n    <hr>\n    <img class=\"product-description-thumb\" src="
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.product : depth0)) != null ? stack1.image : stack1), depth0))
-	    + " alt=\"http://imgur.com/qkPReeD\">\n    <p class=\"product-name\">"
-	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.product : depth0)) != null ? stack1.name : stack1), depth0))
-	    + "</p>\n    <form class=\"product-to-cart\">\n      <div class=\"form-group\">\n        <input type=\"hidden\" name=\"item[product_id]\" value="
+	    + " alt=\"http://imgur.com/qkPReeD\">\n    <form class=\"product-to-cart\">\n      <div class=\"form-group\">\n        <input type=\"hidden\" name=\"item[product_id]\" value="
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.product : depth0)) != null ? stack1._id : stack1), depth0))
 	    + ">\n      </div>\n      <div class=\"form-group\">\n        <input type=\"hidden\" name=\"item[count]\" value=1>\n      </div>\n      <div class=\"form-group\">\n        <input type=\"hidden\" name=\"item[name]\"  value="
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.product : depth0)) != null ? stack1.name : stack1), depth0))
@@ -3053,15 +3054,21 @@ webpackJsonp([0],[
 	},"2":function(container,depth0,helpers,partials,data,blockParams) {
 	    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
-	  return "      Item name: "
+	  return "      <p data-id="
+	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1._id : stack1), depth0))
+	    + "><span class=\"bold-span\">Item name: </span>"
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1.name : stack1), depth0))
-	    + "<br>\n      Item price: $"
+	    + "</p>\n      <p data-id="
+	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1._id : stack1), depth0))
+	    + "><span class=\"bold-span\">Item price: </span>$"
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1.price : stack1), depth0))
-	    + "<br>\n      Item count: "
+	    + "</p>\n      <p data-id="
+	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1._id : stack1), depth0))
+	    + "><span class=\"bold-span\">Item count: </span>"
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1.count : stack1), depth0))
-	    + "<br>\n      <img src="
+	    + "</p>\n      <img src="
 	    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? stack1.image : stack1), depth0))
-	    + " alt=\"watch\" width=\"50px\" height=\"50px\"/><br>\n";
+	    + " alt=\"watch\" class=\"order-history-thumb\"/>\n";
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams) {
 	    var stack1;
 
@@ -3081,7 +3088,7 @@ webpackJsonp([0],[
 	    delay: 400,
 	    origin: 'left',
 	    opacity: 0,
-	    viewFactor: 0.5,
+	    viewFactor: 0.1,
 	    reset: true
 	  });
 	  window.sr.reveal(element2, {
@@ -3090,7 +3097,7 @@ webpackJsonp([0],[
 	    delay: 400,
 	    origin: 'bottom',
 	    opacity: 0,
-	    viewFactor: 0.5,
+	    viewFactor: 0.1,
 	    reset: true
 	  });
 	};
@@ -3273,7 +3280,7 @@ webpackJsonp([0],[
 
 	exports = module.exports = __webpack_require__(42)();
 	// imports
-	exports.i(__webpack_require__(43), "");
+	exports.i(__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"-!./../../node_modules/css-loader/index.js!./styles1.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())), "");
 	exports.i(__webpack_require__(44), "");
 
 	// module
@@ -3339,20 +3346,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 43 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(42)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".title-bar {\n  height: 40px;\n  width: 100%;\n  background-color: black;\n  position: fixed;\n  z-index: 1000;\n}\n\n.title-bar-logo {\n    display: block;\n    margin: 0 auto;\n    width: 6%;\n    background-size: cover;\n    background-color: black;\n    border-radius: 100%;\n}\n\n.header {\n  width: 100%;\n  margin-bottom: 30px;\n}\n\n.image-heaader-logo {\n    display: block;\n    position: absolute;\n    /* bottom: 0; */\n    top: 9%;\n    left: 18vw;\n    margin: 0 auto;\n    z-index: 10;\n    width: 65%;\n    background-size: cover;\n}\n\n.image-heaader {\n  display: block;\n  width: 100%;\n  background-size: cover;\n}\n\n.navigation {\n  height: 50px;\n  width: 100%;\n  background-color: black;\n  position: fixed;\n  bottom: 0;\n  z-index: 1000;\n}\n\n.button-wrapper {\n  margin: 0 auto;\n  width: 60%;\n  min-width: 370px;\n  height: 100%;\n}\n\n.nav-button {\n    font-family: 'Open Sans Condensed', sans-serif;\n    font-size: 2vmax;\n    font-weight: 300;\n    text-align: center;\n    height: 100%;\n    width: 32%;\n    color: white;\n    display: inline-block;\n    background-color: transparent;\n}\n\n.login-wrapper{\n  margin: 0 auto;\n}\n\n#gears{\n  /*position: fixed;\n  bottom: 0;*/\n}\n\n#gear1 {\n    width: 134px;\n    height: 130px;\n    z-index: -1;\n     position: absolute;\n     bottom: -15px;\n     right: 46vw;\n     margin: 0 auto;\n     overflow: hidden;\n    border: 1px solid pink;\n}\n\n.content-container {\n  width: 60%;\n  min-width: 370px;\n  margin: 0 auto;\n\n}\n\n.product-list {\n\n}\n\n/*///// AUTH modal styles /////*/\n.ufm-change-password, .ufm-cart, .ufm-single-product {\n  font-family: 'Open Sans Condensed', sans-serif;\n  float: right;\n}\n\n\n/* product-thumb.handlebars */\n\n.product-thumb-handlebars {\n  height: 200px;\n  width: 200px;\n  display: block;\n}\n\n.product-module {\n    width: 60%;\n    border: 1px solid purple;\n    clear: right;\n    margin: 60px auto 0 auto;\n    margin: 260px auto 0 auto;\n}\n\n.product-thumb {\n  width: 100%;\n  height: 80%;\n}\n\n.product-title {\n  font-family: 'Work Sans', sans-serif;\n  font-size: 6vmin;\n  background-color: black;\n  color: white;\n}\n\n\n/*   product.handlebars  */\n/*/////////////////*/\n.product-to-cart  {\n  display: hidden;\n}\n\n.product-name {\n    font-family: 'Work Sans', sans-serif;\n    font-size: 6vmin;\n    font-weight: 100;\n    float: left;\n    position: absolute;\n    top: -30px;\n    left: 0px;\n    /* z-index: 0; */\n    color: white;\n}\n\n.product-content-wrapper {\n  width: 36vw;\n}\n\n.product-description-wrapper {\n    width: 50vw;\n    max-width: 70%;\n    height: 38vw;\n    max-height: 35vh;\n    font-size: 1.5vw;\n    background: black;\n    position: absolute;\n    top: 22vh;\n    left: -17px;\n    display: inline-block;\n    /* z-index: 0; */\n    padding: 4%;\n    opacity: .8;\n}\n\n.product-description {\n    font-family: 'Open Sans Condensed', sans-serif;\n    font-weight: 300;\n    font-size: 1.7vmin;\n    color: white;\n    max-width: 53%;\n    text-align: left;\n    position: absolute;\n    left: 9px;\n}\n\n.product-image-wrapper {\n  z-index: 4;\n  position: absolute;\n}\n\n.product-price {\n    font-family: 'Work Sans', sans-serif;\n    font-weight: 800;\n    color: white;\n    position: absolute;\n    bottom: 3%;\n    /* left: 17px; */\n    /* float: right; */\n}\n\n.product-image {\n    display: block;\n    width: 80%;\n    background-size: cover;\n    margin: 0 auto;\n}\n\n.add-cart-button {\n    /* display: block; */\n    width: 46%;\n    height: 46px;\n    margin: 10px auto;\n    background-color: red;\n    color: white;\n    /* clear: both; */\n    border: none;\n    position: absolute;\n    top: 818%;\n    left: -3%;\n    z-index: 5;\n    /* margin: 0 auto; */\n}\n\n/*/////////////////*/\n\n.modal-title {\n  text-align: center;\n}\n\n/*///////////////////*/\n\n/*   cart.handlebars  */\n\n.cart-item-wrapper {\n    border: 1px solid purple;\n    clear: both;\n    overflow: auto;\n}\n\n.cart-item-header {\n    float: left;\n    font-size: 4vmin;\n    border-bottom: 1px solid grey;\n    border-right: 1px solid grey;\n    text-align: center;\n    /* padding-left: 25px; */\n    /* padding: 5px 80px 5px 3px; */\n    /* text-align: center; */\n}\n\n.cart-order-summary {\n    border: 1px solid cyan;\n    clear: both;\n    overflow: auto;\n    margin-bottom: 15px;\n    /* position: relative; */\n}\n\n.delete-cart-item {\n  float: left;\n}\n\n.cart-item-name {\n    float: left;\n    border: 1px solid red;\n}\n\n.cart-item-description {\n    float: left;\n    border: 1px solid green;\n    overflow: scroll;\n    height: 60px;\n    font-size: 12px;\n}\n\n.cart-item-quant {\n    float: left;\n    border: 1px solid blue;\n}\n\n.cart-item-price {\n    float: left;\n    border: 1px solid orange;\n}\n\n.cart-total {\n  float: right;\n  border: solid 1px black;\n  padding: 10px;\n  font-weight: 400;\n  width: 15%;\n}\n\n/*.cart-add {\n  visibility: hidden;\n}*/\n\n.checkout-button {\n  float: right;\n  width: 30%;\n  height: 30px;\n  color: red;\n  border: none;\n  color: white;\n  margin-left: 30px;\n}\n/*   cart.handlebars ENDS here */\n\n\n\n/* order-history.handlebars STARTS here */\n\n.order-history-header-wrapper {\n  border: 1px solid purple;\n  clear: both;\n  overflow: auto;\n\n}\n\n.order-history-header {\n    float: left;\n    font-size: 4vmin;\n    /*width: 14vw;*/\n    border-bottom: 1px solid grey;\n    border-right: 1px solid grey;\n    text-align: center;\n    /* margin: 0 auto; */\n}\n\n.order-history-wrapper{\n  border: 1px solid cyan;\n  clear: both;\n  overflow: auto;\n}\n\n\n.order-history-id, .order-history-items, .order-history-date {\n  float: left;\n  font-size: 12px;\n  /*width: 15vw;*/\n  border-bottom: 1px solid grey;\n  text-align: center;\n  margin-top: 10px;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
+/* 43 */,
 /* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
