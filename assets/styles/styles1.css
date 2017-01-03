@@ -86,7 +86,7 @@
      right: 46vw;
      margin: 0 auto;
      overflow: hidden;
-    border: 1px solid pink;
+    /*border: 1px solid pink;*/
 }
 
 
@@ -145,22 +145,8 @@
 
 /*/////// Arm Styles ///////*/
 
-
 .arm-wrapper {
-    border: 1px solid cyan;
-    width: 100%;
-    min-width: 726px;
-    height: 50%;
-    position: fixed;
-    /* top: 550px; */
-    background-image: url(./images/arm_400x400.png);
-    background-size: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.arm-wrapper {
-    border: 1px solid cyan;
+    /*border: 1px solid cyan;*/
     width: 100%;
     min-width: 726px;
     height: 500px;
