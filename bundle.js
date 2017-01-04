@@ -3136,7 +3136,7 @@ webpackJsonp([0],[
 	  handler.open({
 	    name: 'ModSquad',
 	    description: 'purchase',
-	    amount: total
+	    amount: total * 100
 	  });
 	  // console.log(total);
 	};
