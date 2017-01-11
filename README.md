@@ -42,9 +42,9 @@ By Day Two the back end was completed, as well as a working authentication proce
 and we focused our efforts on the CRUD actions as a team
 (essentially 'pair coding').
 
-- Front End Repo: https://github.com/Mod-Squad/front-end-e-com/blob/master/README.md
+- Front End Repo: https://github.com/treep78/front-end-e-com
 - Back End Repo: https://github.com/Mod-Squad/e-com-back-end
-- Front End Demo Site: https://mod-squad.github.io/front-end-e-com/
+- Front End Demo Site: https://treep78.github.io/front-end-e-com/
 - Back End Demo Site: https://gentle-hamlet-35507.herokuapp.com
 
 ## User Stories
