@@ -44,6 +44,7 @@ $('#cart-button').hide();
 $('#checkout-button').hide();
 $('.signin-messages').html('You have logged in!');
 clear('#signInModal');
+$('#userMessage').empty();
 };
 
 const signInFailure = function() {

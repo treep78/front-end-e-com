@@ -93,13 +93,19 @@ const onAddItem = function(event){
   let countData = getFormFields(event.target);
   console.log('this is the event', event);
   console.log('ADD ME!', 'countData', countData);
+  if(store.user)
+  {
     api.addItem(countData)
-    .then(ui.addItemSuccess)
-    .then(function(data){
-      onGetItems(data);
-      console.log('after onGetItems');
-    })
-    .catch(ui.addItemFailure);
+      .then(ui.addItemSuccess)
+      .then(function(data){
+        onGetItems(data);
+        console.log('after onGetItems');
+      })
+      .catch(ui.addItemFailure);
+    } else {
+      $('#userMessage').html('Please sign in to add items to cart.');
+      $('#messageModal').modal();
+    }
 };
 
 

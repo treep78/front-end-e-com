@@ -1,3 +1,4 @@
+
   <div class="product-module-handlebars prod-desc" data-id={{products._id}}>
     <p class="product-name">{{product.name}}</p>
     <hr>
@@ -25,7 +26,6 @@
       <div class="form-group">
         <input type="hidden" name="item[image]" value={{product.image}}>
       </div>
-      <button class="cart-add" type="submit">Add to Cart</button>
+      <button class="cart-add" type="submit" data-toggle="modal">Add to Cart</button>
     </form>
-    <p class="ufm-single-product">This is a User Facing Message for Single Product</p>
   </div>
