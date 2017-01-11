@@ -26,7 +26,10 @@ const getAllProductsFailure = function() {
 
 const getOneProductSuccess = function(data) {
   console.log('Yay data', data);
-   $('#one-product').html(showOneProductTemplate(data));
+  let modData = data
+  console.log('DATA: ',modData);
+  modData.product.price = data.product.price/100+'.00';
+   $('#one-product').html(showOneProductTemplate(modData));
     // $('.cart-add').hide();
    return data;
 };
@@ -39,6 +42,8 @@ const addItemSuccess = function(data) {
   console.log('Item in cart', data);
   $('#cart-button').show();
   $('#checkout-button').show();
+  $('#userMessage').html('Item Added!');
+  $('#messageModal').modal();
   //  $('').html((data));
   //  return data;
 };
@@ -46,6 +51,8 @@ const addItemSuccess = function(data) {
 const addItemFailure = function(error) {
   console.log('FAIL!', error);
   console.log('Log in to add items to your cart.');
+  $('#userMessage').html('Please sign in to add items to cart.');
+  $('#messageModal').modal();
 };
 
 const getItemsSuccess = function(data) {

@@ -408,6 +408,7 @@ position: relative;
   text-align: center;
 }
 
+<<<<<<< HEAD
 
 
 .modal-message {
@@ -416,7 +417,13 @@ position: relative;
 
 .btn-primary{
   background-color: black !important;
+}
 
+.modal-message{
+  text-align: center;
+}
+.btn-primary{
+  background-color: black !important;
 }
 
 /*///////////////////*/

@@ -71,10 +71,7 @@
 
 <div class="footer">
   <p class="footer-title">Developed By: The Mod Squad</p>
-  <a href="#" class="sqaud-link">Rick</a>
-  <a href="#" class="sqaud-link">Ariel</a>
-  <a href="#" class="sqaud-link">Peter</a>
-  <a href="#" class="sqaud-link">Adam</a>
+  <a href="#" class="sqaud-link">Peter Kenna, Rick DeCosta, Ariel Martin, and Adam Dakane</a>
 </div>
 
 <!-- AUTH button modal-->
@@ -170,7 +167,6 @@
               <input type="password" name="passwords[new]" placeholder="New Password">
             </div>
             <button type="submit" name="submit" class="change-password-button">Submit</button>
-            <p class="ufm-change-password">This is a User Facing Message for Change Password</p>
           </form>
           <p class="changepw-messages"></p>
         </div>
@@ -221,7 +217,6 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h2 class="modal-title">Modal title</h2>
-          <h4 class="modal-message">Please Sign-In Before Adding to Cart</h4>
 
         </div>
         <div  id="one-product" class="modal-body">
@@ -269,8 +264,10 @@
   <h5>Total: </h5> -->
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <button style="display: none" type="button" class="btn btn-default create-order" id="save-order-button">Save for later</button>
-  <p class="ufm-cart">This is a User Facing Message for Cart</p>
   <button style="display" type="button" class="btn btn-default checkout" id="checkout-button">Checkout</button>
+  <div id=cart-total>
+
+  </div>
 </div>
 </div>
 </div>
@@ -316,6 +313,17 @@
 <!-- ORDER HISTROY Modal ENDS here -->
 </div>
 
+<!-- user message modal-->
+<div id="messageModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="userMessage" class="modal-title">Please sign in to add items to cart.</h4>
+      </div>
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- user message modal-->
 
 </body>
 
