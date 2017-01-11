@@ -408,9 +408,26 @@ position: relative;
   text-align: center;
 }
 
+<<<<<<< HEAD
 .modal-message {
   text-align: center;
 }
+=======
+<<<<<<< HEAD
+
+
+.modal-message {
+  text-align: center;
+}
+
+.btn-primary{
+  background-color: black !important;
+}
+
+.modal-message{
+  text-align: center;
+}
+>>>>>>> gh-pages
 .btn-primary{
   background-color: black !important;
 }
@@ -542,7 +559,7 @@ position: relative;
   /*width: 15vw;*/
   border-bottom: 1px solid grey;
   margin-top: 10px;
-  height: 40px;
+  /*height: 40px;*/
 }
 
 

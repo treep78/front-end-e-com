@@ -89,15 +89,15 @@ const getPriceTotalSuccess = function(data) {
   // if(totalPrice.length>){
   //   totalPrice = totalPrice.splice(-2,0,'.');
   // }
-  let total = ('$'+data).split('');
-  console.log('this is the total after the first line:', total);
-  total.splice(total.length-2,0,'.');
-  console.log('this is the total:', total);
-  if(total.length > 7){
-    total.splice(total.length-6,0,',');
-  }
-  total = total.join('');
-  $('.price-total').html(total);
+  // let total = ('$'+data).split('');
+  // console.log('this is the total after the first line:', total);
+  // total.splice(total.length-2,0,'.');
+  // console.log('this is the total:', total);
+  // if(total.length > 7){
+  //   total.splice(total.length-6,0,',');
+  // }
+  // total = total.join('');
+  $('.price-total').html(data);
   store.totalCart = data;
   console.log(store.totalCart);
   return store.totalCart;
